@@ -1,0 +1,181 @@
+{
+  "songs": [
+    {
+      "id": "starter-knockin",
+      "title": "Knockin' on Heaven's Door",
+      "artist": "Bob Dylan",
+      "capo": "No capo",
+      "bpm": 72,
+      "difficulty": "easy",
+      "color": { "bg": "#3A3142", "fg": "#E8C9C9" },
+      "favorite": true,
+      "sections": [
+        {
+          "tag": "Verse",
+          "strum": "D D U D U D",
+          "lines": [
+            { "chords": ["G", "", "D"], "lyric": "Mama take this badge off of me" },
+            { "chords": ["Am", "", "G"], "lyric": "I can't use it anymore" },
+            { "chords": ["G", "", "D"], "lyric": "It's gettin' dark, too dark to see" },
+            { "chords": ["C", "", "G"], "lyric": "Feel like I'm knockin' on heaven's door" }
+          ]
+        },
+        {
+          "tag": "Chorus",
+          "strum": "D D U D U D",
+          "lines": [
+            { "chords": ["G", "D"], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["Am", "G"], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["G", "D"], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["C", "G"], "lyric": "Knock, knock, knockin' on heaven's door" }
+          ]
+        },
+        {
+          "tag": "Verse 2",
+          "strum": "D D U D U D",
+          "lines": [
+            { "chords": ["G", "", "D"], "lyric": "Mama put my guns in the ground" },
+            { "chords": ["Am", "", "G"], "lyric": "I can't shoot them anymore" },
+            { "chords": ["G", "", "D"], "lyric": "That long black cloud is comin' down" },
+            { "chords": ["C", "", "G"], "lyric": "Feel like I'm knockin' on heaven's door" }
+          ]
+        },
+        {
+          "tag": "Chorus",
+          "strum": "D D U D U D",
+          "lines": [
+            { "chords": ["G", "D"], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["Am", "G"], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["G", "D"], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["C", "G"], "lyric": "Knock, knock, knockin' on heaven's door" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "starter-threelittlebirds",
+      "title": "Three Little Birds",
+      "artist": "Bob Marley",
+      "capo": "No capo",
+      "bpm": 78,
+      "difficulty": "easy",
+      "color": { "bg": "#2F3A30", "fg": "#C9E8C9" },
+      "favorite": false,
+      "sections": [
+        {
+          "tag": "Verse",
+          "strum": "D D D D",
+          "lines": [
+            { "chords": ["A", "", "D"], "lyric": "Don't worry about a thing" },
+            { "chords": ["A", "", "E"], "lyric": "'Cause every little thing is gonna be alright" },
+            { "chords": ["A", "", "D"], "lyric": "Singin' don't worry about a thing" },
+            { "chords": ["A", "", "E"], "lyric": "'Cause every little thing is gonna be alright" }
+          ]
+        },
+        {
+          "tag": "Chorus",
+          "strum": "D D U D",
+          "lines": [
+            { "chords": ["A", "D"], "lyric": "Rise up this mornin'" },
+            { "chords": ["A", "E"], "lyric": "Smiled with the risin' sun" },
+            { "chords": ["A", "D"], "lyric": "Three little birds" },
+            { "chords": ["A", "E"], "lyric": "Pitch by my doorstep" },
+            { "chords": ["A", "D", "E"], "lyric": "Singin' sweet songs of melodies pure and true" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "starter-imyours",
+      "title": "I'm Yours",
+      "artist": "Jason Mraz",
+      "capo": "Capo 4",
+      "bpm": 78,
+      "difficulty": "easy",
+      "color": { "bg": "#3A3324", "fg": "#E8D8B0" },
+      "favorite": true,
+      "sections": [
+        {
+          "tag": "Verse",
+          "strum": "D D U U D U",
+          "lines": [
+            { "chords": ["G", "", "D/F#"], "lyric": "Well, you done done me and you bet I felt it" },
+            { "chords": ["Em", "", "C"], "lyric": "I tried to be chill but you're so hot that I melted" },
+            { "chords": ["G", "", "D/F#"], "lyric": "I fell right through the cracks" },
+            { "chords": ["Em", "", "C"], "lyric": "Now I'm tryin' to get back" }
+          ]
+        },
+        {
+          "tag": "Chorus",
+          "strum": "D D U U D U",
+          "lines": [
+            { "chords": ["G", "D/F#"], "lyric": "But I won't hesitate no more, no more" },
+            { "chords": ["Em", "C"], "lyric": "It cannot wait, I'm yours" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "starter-letitbe",
+      "title": "Let It Be",
+      "artist": "The Beatles",
+      "capo": "No capo",
+      "bpm": 73,
+      "difficulty": "mid",
+      "color": { "bg": "#283142", "fg": "#BFD6E8" },
+      "favorite": false,
+      "sections": [
+        {
+          "tag": "Verse",
+          "strum": "D D D D D D",
+          "lines": [
+            { "chords": ["C", "", "G"], "lyric": "When I find myself in times of trouble" },
+            { "chords": ["Am", "", "Fmaj7"], "lyric": "Mother Mary comes to me" },
+            { "chords": ["C", "", "G"], "lyric": "Speaking words of wisdom" },
+            { "chords": ["F", "C/E", "Dm", "C"], "lyric": "Let it be" }
+          ]
+        },
+        {
+          "tag": "Chorus",
+          "strum": "D D D D D D",
+          "lines": [
+            { "chords": ["C", "G"], "lyric": "Let it be, let it be" },
+            { "chords": ["Am", "Fmaj7"], "lyric": "Let it be, let it be" },
+            { "chords": ["C", "G", "F", "C"], "lyric": "Whisper words of wisdom, let it be" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "starter-perfect",
+      "title": "Perfect",
+      "artist": "Ed Sheeran",
+      "capo": "Capo 1",
+      "bpm": 63,
+      "difficulty": "mid",
+      "color": { "bg": "#3A2A36", "fg": "#E8C0DC" },
+      "favorite": true,
+      "sections": [
+        {
+          "tag": "Verse",
+          "strum": "D D U D U",
+          "lines": [
+            { "chords": ["G", "", "Em"], "lyric": "I found a love for me" },
+            { "chords": ["C", "", "D"], "lyric": "Darling, just dive right in and follow my lead" },
+            { "chords": ["G", "", "Em"], "lyric": "Well, I found a girl, beautiful and sweet" },
+            { "chords": ["C", "", "D"], "lyric": "I never knew you were the someone waiting for me" }
+          ]
+        },
+        {
+          "tag": "Chorus",
+          "strum": "D D U D U D U",
+          "lines": [
+            { "chords": ["G", "Em"], "lyric": "'Cause we were just kids when we fell in love" },
+            { "chords": ["C", "D"], "lyric": "Not knowing what it was" },
+            { "chords": ["G", "Em", "C", "D"], "lyric": "I will not give you up this time" }
+          ]
+        }
+      ]
+    }
+  ]
+}

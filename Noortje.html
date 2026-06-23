@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1C1B22">
+<title>Songbook</title>
+<style>
+  :root{
+    --ink:#1C1B22;
+    --ink-2:#26242E;
+    --ink-3:#322F3B;
+    --parchment:#F2E9DC;
+    --parchment-dim:#C9C1B3;
+    --rose:#D98E8E;
+    --rose-dim:#8E5F5F;
+    --sage:#8FA888;
+    --gold:#C9A86A;
+    --line:#3A3744;
+    --display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --body: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'Space Mono', 'SF Mono', Menlo, monospace;
+  }
+
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{
+    margin:0; padding:0; height:100%;
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:var(--body);
+    overscroll-behavior:none;
+  }
+  #app{
+    position:relative;
+    max-width:520px;
+    margin:0 auto;
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse 600px 300px at 50% -10%, rgba(217,142,142,0.10), transparent 60%),
+      var(--ink);
+    overflow-x:hidden;
+  }
+
+  /* ---------- Texture: faint paper grain via SVG noise ---------- */
+  .grain{
+    position:fixed; inset:0; pointer-events:none; opacity:0.035; z-index:999; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    padding:28px 22px 18px;
+    display:flex; align-items:flex-end; justify-content:space-between;
+  }
+  .brand{ display:flex; flex-direction:column; gap:2px; }
+  .brand .mark{ display:flex; align-items:center; gap:8px; }
+  .brand .mark svg{ width:18px; height:18px; }
+  .brand .eyebrow{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--rose); opacity:0.85;
+  }
+  .brand h1{
+    font-family:var(--display); font-weight:600; font-size:30px; margin:0;
+    letter-spacing:-0.01em;
+  }
+  .header-note{
+    font-size:12px; color:var(--parchment-dim); max-width:120px; text-align:right;
+    line-height:1.4; font-style:italic;
+  }
+
+  /* ---------- Dedication banner (first load) ---------- */
+  .dedication{
+    margin:0 22px 18px; padding:14px 16px;
+    border:1px solid var(--line); border-radius:14px;
+    background:linear-gradient(135deg, rgba(217,142,142,0.08), rgba(201,168,106,0.05));
+    font-size:13.5px; line-height:1.55; color:var(--parchment-dim);
+    position:relative;
+    animation: fadeIn 0.6s ease;
+  }
+  .dedication b{ color:var(--rose); font-weight:600; }
+  .dedication .close-ded{
+    position:absolute; top:8px; right:10px; background:none; border:none; color:var(--parchment-dim);
+    font-size:16px; cursor:pointer; opacity:0.6; padding:4px;
+  }
+
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
+
+  /* ---------- Search / filter row ---------- */
+  .toolbar{
+    margin:0 22px 14px; display:flex; gap:8px;
+  }
+  .search{
+    flex:1; display:flex; align-items:center; gap:8px;
+    background:var(--ink-2); border:1px solid var(--line); border-radius:12px;
+    padding:10px 14px;
+  }
+  .search input{
+    background:none; border:none; color:var(--parchment); font-family:var(--body);
+    font-size:14px; width:100%; outline:none;
+  }
+  .search input::placeholder{ color:var(--parchment-dim); }
+  .search svg{ width:15px; height:15px; flex-shrink:0; opacity:0.6; }
+
+  /* ---------- Song list ---------- */
+  .list{ padding:4px 22px 100px; display:flex; flex-direction:column; gap:10px; }
+  .section-label{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--parchment-dim); margin:14px 2px 8px; display:flex; align-items:center; gap:8px;
+  }
+  .section-label::after{ content:''; flex:1; height:1px; background:var(--line); }
+
+  .card{
+    display:flex; align-items:center; gap:14px;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:14px 16px;
+    cursor:pointer;
+    transition:transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .card:active{ transform:scale(0.985); background:var(--ink-3); }
+  .card.favorite::before{
+    content:''; position:absolute; top:0; left:0; width:3px; height:100%;
+    background:linear-gradient(180deg, var(--rose), var(--gold));
+  }
+  .card-icon{
+    width:46px; height:46px; border-radius:11px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-weight:700; font-size:17px;
+    background:var(--card-bg, var(--ink-3)); color:var(--card-fg, var(--parchment));
+  }
+  .card-body{ flex:1; min-width:0; }
+  .card-title{
+    font-family:var(--display); font-size:16.5px; font-weight:600; margin:0 0 2px;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .card-meta{
+    font-size:12.5px; color:var(--parchment-dim); display:flex; gap:7px; align-items:center;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .dot{ width:3px; height:3px; border-radius:50%; background:var(--parchment-dim); flex-shrink:0; }
+  .diff-pill{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.04em;
+    padding:3px 8px; border-radius:20px; flex-shrink:0;
+  }
+  .diff-easy{ background:rgba(143,168,136,0.18); color:var(--sage); }
+  .diff-mid{ background:rgba(201,168,106,0.18); color:var(--gold); }
+  .heart-btn{
+    width:36px; height:36px; border-radius:50%; flex-shrink:0; border:none; background:none;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+  }
+  .heart-btn svg{ width:18px; height:18px; transition:transform 0.2s ease; }
+  .heart-btn.active svg path{ fill:var(--rose); stroke:var(--rose); }
+  .heart-btn:active svg{ transform:scale(1.25); }
+
+  .empty{
+    text-align:center; padding:60px 20px; color:var(--parchment-dim);
+  }
+  .empty svg{ width:40px; height:40px; opacity:0.4; margin-bottom:10px; }
+
+  /* ---------- Add song FAB ---------- */
+  .fab{
+    position:fixed; bottom:26px; left:50%;
+    transform:translateX(-50%);
+    width:min(476px, calc(100% - 44px));
+    display:flex; justify-content:flex-end;
+    pointer-events:none;
+    z-index:50;
+  }
+  .fab button{
+    pointer-events:all;
+    display:flex; align-items:center; gap:8px;
+    background:var(--rose); color:var(--ink);
+    border:none; border-radius:30px; padding:13px 20px;
+    font-family:var(--body); font-weight:700; font-size:14px;
+    box-shadow:0 8px 24px rgba(217,142,142,0.35);
+    cursor:pointer;
+  }
+  .fab button svg{ width:16px; height:16px; }
+  .fab button:active{ transform:scale(0.96); }
+
+  /* ================= PLAYER VIEW ================= */
+  .player{
+    position:fixed; inset:0; background:var(--ink); z-index:100;
+    display:flex; flex-direction:column;
+    transform:translateY(100%);
+    transition:transform 0.32s cubic-bezier(.32,.72,0,1);
+    max-width:520px; margin:0 auto;
+  }
+  .player.open{ transform:translateY(0); }
+
+  .player-header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 18px 10px; flex-shrink:0;
+  }
+  .icon-btn{
+    width:38px; height:38px; border-radius:50%; border:none; background:var(--ink-2);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;
+  }
+  .icon-btn svg{ width:17px; height:17px; }
+  .icon-btn:active{ background:var(--ink-3); }
+  .player-title-block{ text-align:center; flex:1; padding:0 8px; min-width:0; }
+  .player-title-block h2{
+    font-family:var(--display); font-size:17px; margin:0; font-weight:600;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .player-title-block span{ font-size:11.5px; color:var(--parchment-dim); }
+
+  .info-strip{
+    display:flex; gap:8px; padding:0 18px 14px; flex-shrink:0; overflow-x:auto;
+  }
+  .info-chip{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.03em;
+    background:var(--ink-2); border:1px solid var(--line); border-radius:9px;
+    padding:6px 10px; white-space:nowrap; color:var(--parchment-dim); flex-shrink:0;
+  }
+  .info-chip b{ color:var(--parchment); font-weight:700; }
+
+  /* ---------- Chord + strum panel (now shows current chord, vertical diagram) ---------- */
+  .chord-panel{
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    margin:0 18px 14px; padding:14px 16px;
+    background:var(--ink-2); border:1px solid var(--line); border-radius:16px;
+    flex-shrink:0;
+  }
+  .cp-strum{ display:flex; align-items:baseline; gap:8px; }
+  .cp-eyebrow{
+    font-family:var(--mono); font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--parchment-dim);
+  }
+  .cp-strum-pattern{
+    font-family:var(--mono); font-size:14px; font-weight:700; color:var(--gold); letter-spacing:0.12em;
+  }
+  .cp-main{
+    display:flex; align-items:center; justify-content:center; gap:20px;
+  }
+  .cp-current{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .cp-diagram{ width:88px; transition:opacity 0.15s ease; }
+  .cp-diagram svg{ width:100%; height:auto; display:block; }
+  .cp-chord-name{
+    font-family:var(--display); font-size:24px; font-weight:700; color:var(--rose);
+    transition:opacity 0.15s ease;
+  }
+
+  .cp-next{
+    display:flex; flex-direction:column; align-items:center; gap:3px;
+    padding-left:16px; border-left:1px solid var(--line);
+    opacity:0.8;
+  }
+  .cp-next .cp-eyebrow{ margin-bottom:1px; }
+  .cp-diagram-next{ width:54px; }
+  .cp-chord-name-next{
+    font-size:15px; color:var(--parchment-dim);
+  }
+
+  /* ---------- Horizontal timeline ---------- */
+  .timeline-wrap{
+    flex:1; position:relative; overflow:hidden;
+    border-top:1px solid var(--line);
+    display:flex; flex-direction:column;
+    min-height:0;
+  }
+  .timeline-fade-left, .timeline-fade-right{
+    position:absolute; top:0; bottom:0; width:36px; z-index:5; pointer-events:none;
+  }
+  .timeline-fade-left{ left:0; background:linear-gradient(90deg, var(--ink), transparent); }
+  .timeline-fade-right{ right:0; background:linear-gradient(-90deg, var(--ink), transparent); }
+
+  .timeline-playhead{
+    position:absolute; top:0; bottom:0; left:50%; width:2px;
+    background:var(--rose); z-index:6; pointer-events:none;
+    box-shadow:0 0 10px rgba(217,142,142,0.6);
+  }
+  .timeline-playhead::before{
+    content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:0; height:0;
+    border-left:5px solid transparent; border-right:5px solid transparent;
+    border-top:6px solid var(--rose);
+  }
+
+  .timeline-scroll{
+    flex:1; overflow:hidden; position:relative;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+
+  .timeline-track{
+    display:flex; align-items:stretch; height:64px; position:relative;
+    will-change:transform;
+  }
+  .beat-cell{
+    flex-shrink:0; width:46px; height:100%;
+    border-right:1px solid var(--line);
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .beat-cell.beat-1{ border-left:1px solid var(--line); }
+  .beat-cell .chord-fill{
+    position:absolute; inset:4px; border-radius:8px;
+    background:var(--ink-3);
+    transition:background 0.15s ease;
+  }
+  .beat-cell.chord-start .chord-fill{
+    border-top-left-radius:8px; border-bottom-left-radius:8px;
+  }
+  .beat-cell .chord-label{
+    position:relative; z-index:1; font-family:var(--display); font-weight:700; font-size:15px;
+    color:var(--parchment-dim); white-space:nowrap;
+  }
+  .beat-cell.chord-start .chord-label{ color:var(--parchment); }
+  .beat-cell.section-start{ border-left:2px solid var(--gold); }
+  .beat-cell.now .chord-fill{ background:rgba(217,142,142,0.22); }
+  .beat-cell.now.chord-start .chord-label{ color:var(--rose); }
+
+  .lyric-track{
+    display:flex; align-items:flex-start; height:54px; position:relative;
+    will-change:transform;
+    padding-top:8px;
+  }
+  .lyric-block{
+    flex-shrink:0; padding:0 10px;
+    font-size:15px; line-height:1.4; color:var(--parchment-dim);
+    display:flex; align-items:flex-start;
+    transition:color 0.2s ease, opacity 0.2s ease;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .lyric-block.current{ color:var(--parchment); font-weight:600; }
+  .section-divider{
+    flex-shrink:0; width:1px; align-self:stretch;
+  }
+
+  /* ---------- Transport controls ---------- */
+  .transport{
+    flex-shrink:0; padding:14px 18px calc(20px + env(safe-area-inset-bottom));
+    border-top:1px solid var(--line);
+    background:var(--ink-2);
+  }
+  .speed-row{
+    display:flex; align-items:center; gap:12px; margin-bottom:14px;
+  }
+  .speed-row svg{ width:14px; height:14px; opacity:0.6; flex-shrink:0; }
+  .speed-track{
+    flex:1; position:relative; height:28px; display:flex; align-items:center;
+  }
+  .speed-track input[type=range]{
+    -webkit-appearance:none; width:100%; height:4px; border-radius:4px;
+    background:var(--line); outline:none; margin:0;
+  }
+  .speed-track input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:22px; height:22px; border-radius:50%;
+    background:var(--rose);
+    border:3px solid var(--ink-2);
+    box-shadow:0 0 0 1px var(--rose);
+    cursor:pointer;
+    /* pick shape via clip-path for a little personality */
+  }
+  .speed-label{
+    font-family:var(--mono); font-size:11.5px; color:var(--parchment-dim); min-width:54px; text-align:right;
+  }
+
+  .main-controls{
+    display:flex; align-items:center; justify-content:center; gap:18px;
+  }
+  .play-btn{
+    width:62px; height:62px; border-radius:50%; border:none;
+    background:var(--rose); color:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 6px 18px rgba(217,142,142,0.35);
+  }
+  .play-btn svg{ width:24px; height:24px; }
+  .play-btn:active{ transform:scale(0.93); }
+  .side-btn{
+    width:46px; height:46px; border-radius:50%; border:none; background:var(--ink-3);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+  }
+  .side-btn svg{ width:17px; height:17px; opacity:0.85; }
+  .side-btn:active{ background:var(--ink); }
+  .side-btn.active{ background:rgba(217,142,142,0.18); }
+  .side-btn.active svg path, .side-btn.active svg circle, .side-btn.active svg rect{ stroke:var(--rose); }
+
+  .progress-bar{
+    height:3px; background:var(--line); border-radius:2px; margin-top:14px; overflow:hidden;
+    cursor:pointer;
+  }
+  .progress-fill{ height:100%; background:var(--rose); width:0%; transition:width 0.1s linear; }
+
+  /* ---------- Add Song Sheet ---------- */
+  .sheet-backdrop{
+    position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:150; opacity:0;
+    pointer-events:none; transition:opacity 0.25s ease;
+  }
+  .sheet-backdrop.open{ opacity:1; pointer-events:all; }
+  .sheet{
+    position:fixed; left:50%; bottom:0; transform:translate(-50%, 100%);
+    width:min(520px, 100%); max-height:88vh;
+    background:var(--ink-2); border-radius:22px 22px 0 0; z-index:151;
+    transition:transform 0.32s cubic-bezier(.32,.72,0,1);
+    display:flex; flex-direction:column;
+    border:1px solid var(--line); border-bottom:none;
+  }
+  .sheet.open{ transform:translate(-50%, 0); }
+  .sheet-handle{ width:36px; height:4px; background:var(--line); border-radius:4px; margin:12px auto 4px; }
+  .sheet-head{ padding:10px 22px 14px; display:flex; align-items:center; justify-content:space-between; }
+  .sheet-head h3{ font-family:var(--display); font-size:19px; margin:0; }
+  .sheet-body{ padding:0 22px 28px; overflow-y:auto; }
+  .field{ margin-bottom:16px; }
+  .field label{
+    display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--parchment-dim); margin-bottom:7px;
+  }
+  .field input, .field textarea, .field select{
+    width:100%; background:var(--ink); border:1px solid var(--line); border-radius:10px;
+    padding:11px 13px; color:var(--parchment); font-family:var(--body); font-size:14px; outline:none;
+  }
+  .field textarea{ font-family:var(--mono); font-size:13px; resize:vertical; min-height:140px; line-height:1.6; }
+  .field-row{ display:flex; gap:10px; }
+  .field-row .field{ flex:1; }
+  .hint{ font-size:12px; color:var(--parchment-dim); line-height:1.5; margin-top:-6px; margin-bottom:16px; }
+  .hint code{ background:var(--ink); padding:2px 5px; border-radius:5px; font-size:11px; }
+  .save-btn{
+    width:100%; background:var(--rose); color:var(--ink); border:none; border-radius:12px;
+    padding:14px; font-family:var(--body); font-weight:700; font-size:14.5px; cursor:pointer; margin-top:6px;
+  }
+  .save-btn:active{ transform:scale(0.98); }
+  .save-btn:disabled{ opacity:0.4; }
+
+  .toast{
+    position:fixed; bottom:30px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--ink-3); border:1px solid var(--line); color:var(--parchment);
+    padding:11px 18px; border-radius:30px; font-size:13px; z-index:300;
+    opacity:0; transition:all 0.3s ease; pointer-events:none;
+    display:flex; align-items:center; gap:8px;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition-duration:0.01ms !important; animation-duration:0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div id="app">
+
+  <header>
+    <div class="brand">
+      <div class="mark">
+        <!-- <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.2.5-1 2-2.2 4-2.2 3.5 0 5.5 3.5 3.5 7.5C19 16.65 12 21 12 21z" fill="#D98E8E"/></svg> -->
+        <!-- <span class="eyebrow">t</span> -->
+      </div>
+      <h1>Huts</h1>
+    </div>
+    <div class="header-note" id="headerNote">Kies een nummer om te spelen</div>
+  </header>
+
+  <div class="dedication" id="dedication">
+    <button class="close-ded" id="closeDed">✕</button>
+    <!-- Made this so you'd always have something easy to play along to — <b>no ads, no premium wall, no nonsense.</b> Just the songs, and a little love stitched into the corners. -->
+  </div>
+
+  <div class="toolbar">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="searchInput" type="text" placeholder="Search songs or artists…" />
+    </div>
+  </div>
+
+  <div class="list" id="list"></div>
+
+  <div class="fab">
+    <button id="addSongBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+      Add song
+    </button>
+  </div>
+</div>
+
+<!-- ================= PLAYER ================= -->
+<div class="player" id="player">
+  <div class="player-header">
+    <button class="icon-btn" id="closePlayer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="player-title-block">
+      <h2 id="playerTitle">Song title</h2>
+      <span id="playerArtist">Artist</span>
+    </div>
+    <button class="icon-btn" id="playerHeart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.2.5-1 2-2.2 4-2.2 3.5 0 5.5 3.5 3.5 7.5C19 16.65 12 21 12 21z"/></svg>
+    </button>
+  </div>
+
+  <div class="info-strip" id="infoStrip"></div>
+
+  <div class="chord-panel" id="chordPanel">
+    <div class="cp-strum">
+      <span class="cp-eyebrow">Strum pattern</span>
+      <span class="cp-strum-pattern" id="cpStrumPattern">D D U D U D</span>
+    </div>
+    <div class="cp-main">
+      <div class="cp-current">
+        <div class="cp-diagram" id="cpDiagram"></div>
+        <span class="cp-chord-name" id="cpChordName">—</span>
+      </div>
+      <div class="cp-next">
+        <span class="cp-eyebrow">Next</span>
+        <div class="cp-diagram cp-diagram-next" id="cpNextDiagram"></div>
+        <span class="cp-chord-name cp-chord-name-next" id="cpNextChordName">—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-wrap">
+    <div class="timeline-fade-left"></div>
+    <div class="timeline-fade-right"></div>
+    <div class="timeline-playhead"></div>
+    <div class="timeline-scroll" id="timelineScroll">
+      <div class="timeline-track" id="timelineTrack"></div>
+      <div class="lyric-track" id="lyricTrack"></div>
+    </div>
+  </div>
+
+  <div class="transport">
+    <div class="speed-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h8l-1 8 11-12h-8l1-8z"/></svg>
+      <div class="speed-track">
+        <input type="range" id="speedSlider" min="0.3" max="2.2" step="0.05" value="1" />
+      </div>
+      <span class="speed-label" id="speedLabel">1.0×</span>
+    </div>
+
+    <div class="main-controls">
+      <button class="side-btn" id="restartBtn" title="Restart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+      </button>
+      <button class="play-btn" id="playBtn">
+        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <button class="side-btn" id="tapTempoBtn" title="Tap tempo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      </button>
+    </div>
+
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ADD SONG SHEET ================= -->
+<div class="sheet-backdrop" id="sheetBackdrop"></div>
+<div class="sheet" id="addSheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-head">
+    <h3>Add a song</h3>
+    <button class="icon-btn" id="closeSheet">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="sheet-body">
+    <div class="field-row">
+      <div class="field">
+        <label>Title</label>
+        <input id="inTitle" type="text" placeholder="Wonderwall" />
+      </div>
+      <div class="field">
+        <label>Artist</label>
+        <input id="inArtist" type="text" placeholder="Oasis" />
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label>Key / Capo</label>
+        <input id="inCapo" type="text" placeholder="Capo 2" />
+      </div>
+      <div class="field">
+        <label>Tempo (BPM)</label>
+        <input id="inBpm" type="number" placeholder="90" />
+      </div>
+      <div class="field">
+        <label>Difficulty</label>
+        <select id="inDiff">
+          <option value="easy">Easy</option>
+          <option value="mid">Intermediate</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Chords &amp; lines</label>
+      <textarea id="inBody" placeholder="[Verse]
+Em        G          D        A
+Today is gonna be the day"></textarea>
+    </div>
+    <div class="hint">
+      One line of chords, then the line it goes with. Start a section with a tag like <code>[Verse]</code> or <code>[Chorus]</code> on its own line. Blank lines are fine.
+    </div>
+    <button class="save-btn" id="saveSongBtn" disabled>Save to songbook</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===================== DATA MODEL =====================
+     Each song: { id, title, artist, capo, bpm, difficulty, color, sections:[{tag, strum, lines:[{chords, lyric}]}] }
+     Storage: localStorage under 'songbook_v1' for user-added songs + favorites + dedication-seen flag.
+
+     Song and chord-shape data now live in separate files (songs.json, chords.json)
+     next to this HTML file, fetched at load time. This means adding a song only
+     requires editing songs.json — never this file. NOTE: fetch() requires this
+     page be served over http(s) (e.g. GitHub Pages); it will not work if this
+     HTML file is opened directly via a file:// path, since browsers block local
+     file reads from JavaScript for security reasons.
+  ========================================================= */
+
+  const DATA_FILES = { songs: "songs.json", chords: "chords.json" };
+  let STARTER_SONGS = [];
+  let CHORD_SHAPES = {};
+  let dataLoadError = null;
+
+  async function loadExternalData(){
+    try{
+      const [songsRes, chordsRes] = await Promise.all([
+        fetch(DATA_FILES.songs),
+        fetch(DATA_FILES.chords)
+      ]);
+      if(!songsRes.ok) throw new Error("songs.json responded with " + songsRes.status);
+      if(!chordsRes.ok) throw new Error("chords.json responded with " + chordsRes.status);
+      const songsData = await songsRes.json();
+      const chordsData = await chordsRes.json();
+      STARTER_SONGS = Array.isArray(songsData.songs) ? songsData.songs : [];
+      CHORD_SHAPES = (chordsData && chordsData.chords) ? chordsData.chords : {};
+    } catch(err){
+      dataLoadError = err;
+      STARTER_SONGS = [];
+      CHORD_SHAPES = {};
+    }
+  }
+
+  const STORE_KEY = "songbook_v1";
+
+
+
+  function loadStore(){
+    try{
+      const raw = localStorage.getItem(STORE_KEY);
+      if(raw) return JSON.parse(raw);
+    }catch(e){}
+    return { userSongs:[], favorites:{}, dedicationClosed:false };
+  }
+  function saveStore(s){
+    localStorage.setItem(STORE_KEY, JSON.stringify(s));
+  }
+
+  let store = loadStore();
+
+  function seedFavoritesFromStarters(){
+    STARTER_SONGS.forEach(s=>{
+      if(!(s.id in store.favorites)) store.favorites[s.id] = !!s.favorite;
+    });
+    saveStore(store);
+  }
+
+  function allSongs(){
+    return [...STARTER_SONGS, ...store.userSongs];
+  }
+
+  function isFav(id){ return !!store.favorites[id]; }
+  function toggleFav(id){
+    store.favorites[id] = !store.favorites[id];
+    saveStore(store);
+  }
+
+  /* ===================== PARSER for "Add song" text =====================
+     Format:
+       [Section Tag]
+       Chord  Chord   Chord
+       lyric line text
+
+     Chord line = a line composed mostly of tokens that look like chords (letters A-G, #, b, m, sus, maj, /, digits)
+     and whitespace. The lyric line follows immediately. Section tags are lines wrapped in [ ].
+  ========================================================= */
+  function looksLikeChordLine(line){
+    const trimmed = line.trim();
+    if(!trimmed) return false;
+    const tokens = trimmed.split(/\s+/);
+    const chordRe = /^[A-G](#|b)?(m|maj|min|sus|dim|aug|add)?\d{0,2}(\/[A-G](#|b)?)?$/;
+    return tokens.every(t => chordRe.test(t));
+  }
+
+  function parseSongBody(text){
+    const rawLines = text.split("\n");
+    const sections = [];
+    let current = { tag:"", lines:[] };
+    let i=0;
+    function pushSection(){
+      if(current.lines.length || current.tag) sections.push(current);
+      current = { tag:"", lines:[] };
+    }
+    while(i < rawLines.length){
+      const line = rawLines[i];
+      const trimmed = line.trim();
+      if(!trimmed){ i++; continue; }
+      const tagMatch = trimmed.match(/^\[(.+)\]$/);
+      if(tagMatch){
+        pushSection();
+        current.tag = tagMatch[1];
+        i++; continue;
+      }
+      if(looksLikeChordLine(line) && i+1 < rawLines.length){
+        const chordTokens = trimmed.split(/\s+/);
+        const lyric = rawLines[i+1].trim();
+        current.lines.push({ chords: chordTokens, lyric: lyric });
+        i += 2;
+      } else {
+        // standalone lyric line w/ no chords above it
+        current.lines.push({ chords:[], lyric: trimmed });
+        i += 1;
+      }
+    }
+    pushSection();
+    return sections.filter(s=>s.lines.length);
+  }
+
+  const PALETTE = [
+    {bg:"#3A3142", fg:"#E8C9C9"}, {bg:"#2F3A30", fg:"#C9E8C9"},
+    {bg:"#3A3324", fg:"#E8D8B0"}, {bg:"#283142", fg:"#BFD6E8"},
+    {bg:"#3A2A36", fg:"#E8C0DC"}, {bg:"#2C3A3A", fg:"#BFE8DE"},
+  ];
+
+  /* ===================== CHORD SHAPE DATABASE =====================
+     Each shape: frets array, string 6 (low E) -> string 1 (high E).
+     Fret value: 0 = open, -1 = muted/don't play, N = fret number.
+     baseFret: which fret the diagram window starts at (1 = nut shown).
+     For movable/slash shapes we still show the common open-position fingering.
+     CHORD_SHAPES itself is populated by loadExternalData() from chords.json.
+  ========================================================= */
+
+  function chordShapeFor(name){
+    if(!name) return null;
+    return CHORD_SHAPES[name] || null;
+  }
+
+
+  /* Renders a standard vertical chord diagram: nut at top, frets running
+     downward, strings left (low E) to right (high E) — Ultimate Guitar style. */
+  function renderChordDiagramSVG(chordName){
+    const shape = chordShapeFor(chordName);
+    const W = 96, H = 112;
+    const fretsToShow = 4;
+    const leftPad = 14, rightPad = 14, topPad = 22, botPad = 10;
+    const gridW = W - leftPad - rightPad;
+    const gridH = H - topPad - botPad;
+    const stringGap = gridW / 5;
+    const fretGap = gridH / fretsToShow;
+
+    let svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">`;
+
+    // nut (thick line at top) + frets (thin horizontal lines going down)
+    svg += `<line x1="${leftPad}" y1="${topPad}" x2="${leftPad+gridW}" y2="${topPad}" stroke="var(--parchment)" stroke-width="3"/>`;
+    for(let f=1; f<=fretsToShow; f++){
+      const y = topPad + f*fretGap;
+      svg += `<line x1="${leftPad}" y1="${y}" x2="${leftPad+gridW}" y2="${y}" stroke="var(--line)" stroke-width="1.5"/>`;
+    }
+    // strings (6 vertical lines, left = low E, right = high E)
+    for(let s=0; s<6; s++){
+      const x = leftPad + s*stringGap;
+      svg += `<line x1="${x}" y1="${topPad}" x2="${x}" y2="${topPad+gridH}" stroke="var(--parchment-dim)" stroke-width="1.4"/>`;
+    }
+
+    if(shape){
+      const frets = shape.frets;
+      const base = shape.baseFret || 1;
+      frets.forEach((fret, idx)=>{
+        const x = leftPad + idx*stringGap;
+        if(fret === -1){
+          svg += `<text x="${x}" y="${topPad-9}" font-family="var(--mono)" font-size="11" fill="var(--rose-dim)" text-anchor="middle">×</text>`;
+        } else if(fret === 0){
+          svg += `<circle cx="${x}" cy="${topPad-9}" r="4" fill="none" stroke="var(--sage)" stroke-width="1.6"/>`;
+        } else {
+          const relFret = fret - base + 1;
+          const y = topPad + (relFret - 0.5)*fretGap;
+          svg += `<circle cx="${x}" cy="${y}" r="6.5" fill="var(--rose)"/>`;
+        }
+      });
+    }
+
+    svg += `</svg>`;
+    return svg;
+  }
+
+  /* ===================== RENDER: LIST ===================== */
+  const listEl = document.getElementById("list");
+  const searchInput = document.getElementById("searchInput");
+
+  function initials(title){
+    return title.split(/\s+/).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+  }
+
+  function renderList(filter){
+    const songs = allSongs();
+    const q = (filter||"").trim().toLowerCase();
+    const filtered = q ? songs.filter(s =>
+      s.title.toLowerCase().includes(q) || s.artist.toLowerCase().includes(q)
+    ) : songs;
+
+    listEl.innerHTML = "";
+
+    if(filtered.length === 0){
+      listEl.innerHTML = `<div class="empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        <div>No songs match that search.</div>
+      </div>`;
+      return;
+    }
+
+    const favs = filtered.filter(s=>isFav(s.id));
+    const rest = filtered.filter(s=>!isFav(s.id));
+
+    function card(s){
+      const c = document.createElement("div");
+      c.className = "card" + (isFav(s.id) ? " favorite" : "");
+      c.style.setProperty("--card-bg", s.color.bg);
+      c.style.setProperty("--card-fg", s.color.fg);
+      c.innerHTML = `
+        <div class="card-icon">${initials(s.title)}</div>
+        <div class="card-body">
+          <p class="card-title">${escapeHtml(s.title)}</p>
+          <div class="card-meta">
+            <span>${escapeHtml(s.artist)}</span>
+            <span class="dot"></span>
+            <span>${escapeHtml(s.capo)}</span>
+          </div>
+        </div>
+        <span class="diff-pill ${s.difficulty==='easy'?'diff-easy':'diff-mid'}">${s.difficulty==='easy'?'Easy':'Intermediate'}</span>
+        <button class="heart-btn ${isFav(s.id)?'active':''}" data-id="${s.id}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.2.5-1 2-2.2 4-2.2 3.5 0 5.5 3.5 3.5 7.5C19 16.65 12 21 12 21z"/></svg>
+        </button>
+      `;
+      c.addEventListener("click", (e)=>{
+        if(e.target.closest(".heart-btn")) return;
+        openPlayer(s.id);
+      });
+      c.querySelector(".heart-btn").addEventListener("click", (e)=>{
+        e.stopPropagation();
+        toggleFav(s.id);
+        renderList(searchInput.value);
+      });
+      return c;
+    }
+
+    if(favs.length){
+      const label = document.createElement("div");
+      label.className = "section-label";
+      label.textContent = "Favorites";
+      listEl.appendChild(label);
+      favs.forEach(s=>listEl.appendChild(card(s)));
+    }
+    const label2 = document.createElement("div");
+    label2.className = "section-label";
+    label2.textContent = favs.length ? "All songs" : "Your songbook";
+    listEl.appendChild(label2);
+    rest.forEach(s=>listEl.appendChild(card(s)));
+  }
+
+  function escapeHtml(str){
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  searchInput.addEventListener("input", ()=> renderList(searchInput.value));
+
+  /* ===================== DEDICATION BANNER ===================== */
+  const dedication = document.getElementById("dedication");
+  const headerNote = document.getElementById("headerNote");
+  if(store.dedicationClosed){ dedication.style.display = "none"; }
+  document.getElementById("closeDed").addEventListener("click", ()=>{
+    dedication.style.display = "none";
+    store.dedicationClosed = true;
+    saveStore(store);
+  });
+
+  const NOTES = [
+    "Kies een nummer om te spelen",
+    "Veel plezier met het spelen!",
+    "Geniet van de muziek!"
+
+  ];
+  headerNote.textContent = NOTES[Math.floor(Math.random()*NOTES.length)];
+
+  /* ===================== PLAYER ===================== */
+  const player = document.getElementById("player");
+  const playerTitle = document.getElementById("playerTitle");
+  const playerArtist = document.getElementById("playerArtist");
+  const infoStrip = document.getElementById("infoStrip");
+  const playBtn = document.getElementById("playBtn");
+  const playIcon = document.getElementById("playIcon");
+  const speedSlider = document.getElementById("speedSlider");
+  const speedLabel = document.getElementById("speedLabel");
+  const progressFill = document.getElementById("progressFill");
+  const progressBar = document.getElementById("progressBar");
+  const playerHeart = document.getElementById("playerHeart");
+  const cpChordName = document.getElementById("cpChordName");
+  const cpDiagram = document.getElementById("cpDiagram");
+  const cpStrumPattern = document.getElementById("cpStrumPattern");
+  const cpNextChordName = document.getElementById("cpNextChordName");
+  const cpNextDiagram = document.getElementById("cpNextDiagram");
+  const timelineTrack = document.getElementById("timelineTrack");
+  const lyricTrack = document.getElementById("lyricTrack");
+  const tapTempoBtn = document.getElementById("tapTempoBtn");
+
+  const BEAT_PX = 46;          // must match .beat-cell width in CSS
+  const DEFAULT_BEATS_PER_CHORD = 4;
+
+  let currentSong = null;
+  let beatTimeline = [];   // [{chord, sectionTag, strum, isChordStart, isSectionStart}, ...] one per beat
+  let lyricBlocks = [];    // [{text, startBeat, beatSpan}, ...]
+  let totalBeats = 0;
+  let isPlaying = false;
+  let scrollAnim = null;
+  let elapsedMs = 0;
+  let lastTs = null;
+
+  function openPlayer(id){
+    const song = allSongs().find(s=>s.id===id);
+    if(!song) return;
+    currentSong = song;
+    playerTitle.textContent = song.title;
+    playerArtist.textContent = song.artist;
+    playerHeart.classList.toggle("active", isFav(id));
+
+    infoStrip.innerHTML = `
+      <div class="info-chip">${escapeHtml(song.capo)}</div>
+      <div class="info-chip"><b>${song.bpm}</b> bpm</div>
+      <div class="info-chip">${song.difficulty==='easy'?'Easy':'Intermediate'}</div>
+    `;
+
+    buildTimeline(song);
+    player.classList.add("open");
+    resetTransport();
+  }
+
+  /* Expands a song's sections/lines/chords into a flat per-beat timeline,
+     plus a parallel list of lyric blocks positioned by beat offset.
+     Each chord defaults to DEFAULT_BEATS_PER_CHORD beats (editable later
+     per-song since real timing isn't derivable from BPM alone). */
+  function buildTimeline(song){
+    beatTimeline = [];
+    lyricBlocks = [];
+    let beatCursor = 0;
+
+    song.sections.forEach(sec=>{
+      const strum = sec.strum || "D D D D";
+      let isFirstBeatOfSection = true;
+      sec.lines.forEach(ln=>{
+        const chordsInLine = (ln.chords && ln.chords.length) ? ln.chords : [""];
+        const lineStartBeat = beatCursor;
+        chordsInLine.forEach(ch=>{
+          const chordName = (ch && ch.trim()) ? ch.trim() : null;
+          for(let b=0; b<DEFAULT_BEATS_PER_CHORD; b++){
+            beatTimeline.push({
+              chord: chordName,
+              sectionTag: sec.tag,
+              strum: strum,
+              isChordStart: (b===0),
+              isSectionStart: isFirstBeatOfSection && (b===0)
+            });
+            isFirstBeatOfSection = false;
+          }
+          beatCursor += DEFAULT_BEATS_PER_CHORD;
+        });
+        const lineSpanBeats = beatCursor - lineStartBeat;
+        lyricBlocks.push({
+          text: ln.lyric || "",
+          startBeat: lineStartBeat,
+          beatSpan: lineSpanBeats
+        });
+      });
+    });
+
+    totalBeats = beatCursor;
+    renderTimelineDOM();
+  }
+
+  function renderTimelineDOM(){
+    // chord cells
+    let html = "";
+    beatTimeline.forEach((b, i)=>{
+      const isStart = b.isChordStart;
+      const classes = ["beat-cell"];
+      if(i % DEFAULT_BEATS_PER_CHORD === 0) classes.push("beat-1");
+      if(isStart) classes.push("chord-start");
+      if(b.isSectionStart) classes.push("section-start");
+      html += `<div class="${classes.join(' ')}">
+        <div class="chord-fill"></div>
+        ${isStart ? `<span class="chord-label">${escapeHtml(b.chord || "—")}</span>` : ""}
+      </div>`;
+    });
+    timelineTrack.innerHTML = html;
+
+    // lyric blocks, each positioned by width proportional to its beat span
+    let lyricHtml = "";
+    lyricBlocks.forEach(block=>{
+      const widthPx = block.beatSpan * BEAT_PX;
+      lyricHtml += `<div class="lyric-block" data-start="${block.startBeat}" data-span="${block.beatSpan}" style="width:${widthPx}px">${escapeHtml(block.text)}</div>`;
+    });
+    lyricTrack.innerHTML = lyricHtml;
+  }
+
+  function resetTransport(){
+    pause();
+    elapsedMs = 0;
+    progressFill.style.width = "0%";
+    lastShownChord = undefined;
+    lastShownNextChord = undefined;
+    updatePlaybackVisuals(0);
+  }
+
+  function setPlayingUI(playing){
+    isPlaying = playing;
+    playIcon.innerHTML = playing
+      ? '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>'
+      : '<path d="M8 5v14l11-7z"/>';
+  }
+
+  function play(){
+    if(!currentSong || !beatTimeline.length) return;
+    setPlayingUI(true);
+    lastTs = null;
+    scrollAnim = requestAnimationFrame(tick);
+  }
+  function pause(){
+    setPlayingUI(false);
+    if(scrollAnim) cancelAnimationFrame(scrollAnim);
+    scrollAnim = null;
+    lastTs = null;
+  }
+
+  function msPerBeat(){
+    const bpm = (currentSong && currentSong.bpm) ? currentSong.bpm : 90;
+    return 60000 / bpm;
+  }
+
+  function tick(ts){
+    if(!isPlaying) return;
+    if(lastTs == null) lastTs = ts;
+    const dt = ts - lastTs;
+    lastTs = ts;
+    const speed = parseFloat(speedSlider.value);
+    elapsedMs += dt * speed;
+
+    const durationMs = totalBeats * msPerBeat();
+    const progress = durationMs > 0 ? Math.min(elapsedMs / durationMs, 1) : 0;
+    progressFill.style.width = (progress*100).toFixed(2) + "%";
+
+    updatePlaybackVisuals(elapsedMs);
+
+    if(progress >= 1){
+      setPlayingUI(false);
+      return;
+    }
+    scrollAnim = requestAnimationFrame(tick);
+  }
+
+  let lastShownChord = undefined;
+  const timelineWrapEl = document.querySelector(".timeline-wrap");
+  function getViewportCenterPx(){
+    return timelineWrapEl ? timelineWrapEl.clientWidth / 2 : 160;
+  }
+
+  /* Translates the chord timeline and lyric track left by the elapsed beats,
+     so the playhead (fixed at horizontal center) always sits over the
+     beat-cell that's currently playing. Also updates the chord panel
+     and strum-pattern label to match. */
+  function updatePlaybackVisuals(ms){
+    const elapsedBeats = ms / msPerBeat();
+    const offsetPx = getViewportCenterPx() - elapsedBeats * BEAT_PX;
+    timelineTrack.style.transform = `translateX(${offsetPx}px)`;
+    lyricTrack.style.transform = `translateX(${offsetPx}px)`;
+
+    // tiny epsilon guards against floating-point drift landing just under
+    // an exact beat boundary (e.g. 23.999999996 instead of 24)
+    const beatIdx = Math.max(0, Math.min(beatTimeline.length - 1, Math.floor(elapsedBeats + 1e-6)));
+    const beat = beatTimeline[beatIdx];
+    if(!beat) return;
+
+    // highlight current chord cell + current lyric block
+    timelineTrack.querySelectorAll(".beat-cell.now").forEach(el=>el.classList.remove("now"));
+    const cellEl = timelineTrack.children[beatIdx];
+    if(cellEl) cellEl.classList.add("now");
+
+    lyricTrack.querySelectorAll(".lyric-block.current").forEach(el=>el.classList.remove("current"));
+    const lyricBlockIdx = lyricBlocks.findIndex(b => beatIdx >= b.startBeat && beatIdx < b.startBeat + b.beatSpan);
+    if(lyricBlockIdx >= 0 && lyricTrack.children[lyricBlockIdx]){
+      lyricTrack.children[lyricBlockIdx].classList.add("current");
+    }
+
+    if(beat.chord !== lastShownChord){
+      lastShownChord = beat.chord;
+      cpChordName.textContent = beat.chord || "—";
+      cpDiagram.innerHTML = renderChordDiagramSVG(beat.chord);
+    }
+    cpStrumPattern.textContent = beat.strum || "—";
+
+    const upcoming = findNextChord(beatIdx, beat.chord);
+    if(upcoming !== lastShownNextChord){
+      lastShownNextChord = upcoming;
+      cpNextChordName.textContent = upcoming || "—";
+      cpNextDiagram.innerHTML = renderChordDiagramSVG(upcoming);
+    }
+  }
+
+  /* Finds the chord that starts right after the current chord's run ends —
+     scans forward past every beat that still matches the current chord, then
+     returns whatever comes next. Wraps to the top of the song if the current
+     chord runs to the end, so the preview never goes blank on the last chord. */
+  let lastShownNextChord = undefined;
+  function findNextChord(fromIdx, currentChord){
+    let i = fromIdx;
+    while(i < beatTimeline.length && beatTimeline[i].chord === currentChord){
+      i++;
+    }
+    if(i < beatTimeline.length) return beatTimeline[i].chord;
+    // reached the end still on the same chord — wrap and look from the top
+    i = 0;
+    while(i < beatTimeline.length && beatTimeline[i].chord === currentChord){
+      i++;
+    }
+    return i < beatTimeline.length ? beatTimeline[i].chord : null;
+  }
+
+  /* ---------- Tap tempo: lets the person nudge the BPM by tapping along,
+     since beats-per-chord is an approximation, not transcribed timing. ---------- */
+  let tapTimestamps = [];
+  tapTempoBtn.addEventListener("click", ()=>{
+    const now = performance.now();
+    tapTimestamps.push(now);
+    tapTimestamps = tapTimestamps.filter(t => now - t < 4000); // keep last 4s of taps
+    if(tapTimestamps.length >= 3){
+      const intervals = [];
+      for(let i=1;i<tapTimestamps.length;i++) intervals.push(tapTimestamps[i]-tapTimestamps[i-1]);
+      const avgMs = intervals.reduce((a,b)=>a+b,0) / intervals.length;
+      const newBpm = Math.round(60000 / avgMs);
+      if(currentSong && newBpm >= 40 && newBpm <= 220){
+        currentSong.bpm = newBpm;
+        if(currentSong.id.startsWith("user-")){
+          const stored = store.userSongs.find(s=>s.id===currentSong.id);
+          if(stored){ stored.bpm = newBpm; saveStore(store); }
+        }
+        infoStrip.innerHTML = `
+          <div class="info-chip">${escapeHtml(currentSong.capo)}</div>
+          <div class="info-chip"><b>${currentSong.bpm}</b> bpm</div>
+          <div class="info-chip">${currentSong.difficulty==='easy'?'Easy':'Intermediate'}</div>
+        `;
+        showToast(`Tempo set to ${newBpm} bpm`);
+      }
+    }
+  });
+
+  playBtn.addEventListener("click", ()=>{
+    if(isPlaying) pause(); else play();
+  });
+  document.getElementById("restartBtn").addEventListener("click", resetTransport);
+
+  speedSlider.addEventListener("input", ()=>{
+    speedLabel.textContent = parseFloat(speedSlider.value).toFixed(2).replace(/0$/,'') + "×";
+  });
+
+  progressBar.addEventListener("click", (e)=>{
+    if(!totalBeats) return;
+    const rect = progressBar.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const durationMs = totalBeats * msPerBeat();
+    elapsedMs = ratio * durationMs;
+    progressFill.style.width = (ratio*100).toFixed(2)+"%";
+    updatePlaybackVisuals(elapsedMs);
+  });
+
+  playerHeart.addEventListener("click", ()=>{
+    if(!currentSong) return;
+    toggleFav(currentSong.id);
+    playerHeart.classList.toggle("active", isFav(currentSong.id));
+    renderList(searchInput.value);
+  });
+
+  document.getElementById("closePlayer").addEventListener("click", ()=>{
+    pause();
+    player.classList.remove("open");
+  });
+
+  /* ===================== ADD SONG SHEET ===================== */
+  const sheetBackdrop = document.getElementById("sheetBackdrop");
+  const addSheet = document.getElementById("addSheet");
+  const addSongBtn = document.getElementById("addSongBtn");
+  const closeSheetBtn = document.getElementById("closeSheet");
+  const saveSongBtn = document.getElementById("saveSongBtn");
+  const inTitle = document.getElementById("inTitle");
+  const inArtist = document.getElementById("inArtist");
+  const inCapo = document.getElementById("inCapo");
+  const inBpm = document.getElementById("inBpm");
+  const inDiff = document.getElementById("inDiff");
+  const inBody = document.getElementById("inBody");
+
+  function openSheet(){
+    sheetBackdrop.classList.add("open");
+    addSheet.classList.add("open");
+  }
+  function closeSheet(){
+    sheetBackdrop.classList.remove("open");
+    addSheet.classList.remove("open");
+  }
+  addSongBtn.addEventListener("click", openSheet);
+  closeSheetBtn.addEventListener("click", closeSheet);
+  sheetBackdrop.addEventListener("click", closeSheet);
+
+  function validateForm(){
+    saveSongBtn.disabled = !(inTitle.value.trim() && inArtist.value.trim() && inBody.value.trim());
+  }
+  [inTitle, inArtist, inBody].forEach(el=> el.addEventListener("input", validateForm));
+
+  saveSongBtn.addEventListener("click", ()=>{
+    const sections = parseSongBody(inBody.value);
+    if(!sections.length){
+      showToast("Couldn't read any lines — check the format and try again");
+      return;
+    }
+    const id = "user-" + Date.now();
+    const color = PALETTE[store.userSongs.length % PALETTE.length];
+    const song = {
+      id, title: inTitle.value.trim(), artist: inArtist.value.trim(),
+      capo: inCapo.value.trim() || "No capo",
+      bpm: parseInt(inBpm.value) || 90,
+      difficulty: inDiff.value,
+      color, favorite:false,
+      sections
+    };
+    store.userSongs.push(song);
+    store.favorites[id] = false;
+    saveStore(store);
+    renderList(searchInput.value);
+    closeSheet();
+    [inTitle,inArtist,inCapo,inBpm,inBody].forEach(el=>el.value="");
+    inDiff.value = "easy";
+    validateForm();
+    showToast("Added to the songbook 🤍");
+  });
+
+  /* ===================== TOAST ===================== */
+  let toastTimer = null;
+  function showToast(msg){
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=> t.classList.remove("show"), 2200);
+  }
+
+  /* ===================== INIT ===================== */
+  window.addEventListener("resize", ()=>{
+    if(currentSong && beatTimeline.length) updatePlaybackVisuals(elapsedMs);
+  });
+
+  function showLoadError(){
+    listEl.innerHTML = `<div class="empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      <div>Couldn't load the songbook.</div>
+      <div style="font-size:12px; margin-top:6px; opacity:0.8; line-height:1.5;">
+        This usually means the page was opened as a local file instead of through its hosted link —
+        songs.json and chords.json can only be read over http(s). If this keeps happening once it's
+        hosted, check that both files sit next to index.html.
+      </div>
+    </div>`;
+  }
+
+  async function init(){
+    await loadExternalData();
+    if(dataLoadError){
+      showLoadError();
+      return;
+    }
+    seedFavoritesFromStarters();
+    renderList("");
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
