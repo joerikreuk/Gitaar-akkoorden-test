@@ -14,40 +14,40 @@
           "tag": "Verse",
           "strum": "D D U D U D",
           "lines": [
-            { "chords": ["G", "", "D"], "lyric": "Mama take this badge off of me" },
-            { "chords": ["Am", "", "G"], "lyric": "I can't use it anymore" },
-            { "chords": ["G", "", "D"], "lyric": "It's gettin' dark, too dark to see" },
-            { "chords": ["C", "", "G"], "lyric": "Feel like I'm knockin' on heaven's door" }
+            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Mama take this badge off of me" },
+            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "I can't use it anymore" },
+            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "It's gettin' dark, too dark to see" },
+            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Feel like I'm knockin' on heaven's door" }
           ]
         },
         {
           "tag": "Chorus",
           "strum": "D D U D U D",
           "lines": [
-            { "chords": ["G", "D"], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["Am", "G"], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["G", "D"], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["C", "G"], "lyric": "Knock, knock, knockin' on heaven's door" }
+            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" }
           ]
         },
         {
           "tag": "Verse 2",
           "strum": "D D U D U D",
           "lines": [
-            { "chords": ["G", "", "D"], "lyric": "Mama put my guns in the ground" },
-            { "chords": ["Am", "", "G"], "lyric": "I can't shoot them anymore" },
-            { "chords": ["G", "", "D"], "lyric": "That long black cloud is comin' down" },
-            { "chords": ["C", "", "G"], "lyric": "Feel like I'm knockin' on heaven's door" }
+            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Mama put my guns in the ground" },
+            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "I can't shoot them anymore" },
+            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "That long black cloud is comin' down" },
+            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Feel like I'm knockin' on heaven's door" }
           ]
         },
         {
           "tag": "Chorus",
           "strum": "D D U D U D",
           "lines": [
-            { "chords": ["G", "D"], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["Am", "G"], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["G", "D"], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["C", "G"], "lyric": "Knock, knock, knockin' on heaven's door" }
+            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
+            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" }
           ]
         }
       ]
@@ -66,21 +66,23 @@
           "tag": "Verse",
           "strum": "D D D D",
           "lines": [
-            { "chords": ["A", "", "D"], "lyric": "Don't worry about a thing" },
-            { "chords": ["A", "", "E"], "lyric": "'Cause every little thing is gonna be alright" },
-            { "chords": ["A", "", "D"], "lyric": "Singin' don't worry about a thing" },
-            { "chords": ["A", "", "E"], "lyric": "'Cause every little thing is gonna be alright" }
+            { "chords": ["A", "", "", "", "", "", "", "", "D", "", "", "", "A", "", "", ""], "lyric": "Don't worry about a thing" },
+            { "chords": ["A", "", "", "", "", "", "", "", "E", "", "", "", "A", "", "", ""], "lyric": "'Cause every little thing is gonna be alright" },
+            { "chords": ["A", "", "", "", "", "", "", "", "D", "", "", "", "A", "", "", ""], "lyric": "Singin' don't worry about a thing" },
+            { "chords": ["A", "", "", "", "", "", "", "", "E", "", "", "", "A", "", "", ""], "lyric": "'Cause every little thing is gonna be alright" }
           ]
         },
         {
           "tag": "Chorus",
           "strum": "D D U D",
           "lines": [
-            { "chords": ["A", "D"], "lyric": "Rise up this mornin'" },
-            { "chords": ["A", "E"], "lyric": "Smiled with the risin' sun" },
-            { "chords": ["A", "D"], "lyric": "Three little birds" },
-            { "chords": ["A", "E"], "lyric": "Pitch by my doorstep" },
-            { "chords": ["A", "D", "E"], "lyric": "Singin' sweet songs of melodies pure and true" }
+            { "chords": ["A", "", "", "", "", "", "", ""], "lyric": "Rise up this mornin'" },
+            { "chords": ["E", "", "", "", "", "", "", ""], "lyric": "Smiled with the risin' sun" },
+            { "chords": ["A", "", "", "", "", "", "", ""], "lyric": "Three little birds" },
+            { "chords": ["D", "", "", "", "", "", "", ""], "lyric": "Pitch by my doorstep" },
+            { "chords": ["A", "", "", "", "", "", "", ""], "lyric": "Singin' sweet songs of melodies pure and true" },
+            { "chords": ["E", "", "", "", "", "", "", ""], "lyric": "Sayin', this is my message to you" },
+            { "chords": ["D", "", "", "", "A", "", "", ""], "lyric": "Sayin' don't worry 'bout a thing" }
           ]
         }
       ]
@@ -99,18 +101,24 @@
           "tag": "Verse",
           "strum": "D D U U D U",
           "lines": [
-            { "chords": ["G", "", "D/F#"], "lyric": "Well, you done done me and you bet I felt it" },
-            { "chords": ["Em", "", "C"], "lyric": "I tried to be chill but you're so hot that I melted" },
-            { "chords": ["G", "", "D/F#"], "lyric": "I fell right through the cracks" },
-            { "chords": ["Em", "", "C"], "lyric": "Now I'm tryin' to get back" }
+            { "chords": ["G", "", "", ""], "lyric": "Well, you done done me" },
+            { "chords": ["D/F#", "", "", ""], "lyric": "and you bet I felt it" },
+            { "chords": ["Em", "", "", ""], "lyric": "I tried to be chill" },
+            { "chords": ["C", "", "", ""], "lyric": "but you're so hot that I melted" },
+            { "chords": ["G", "", "", ""], "lyric": "I fell right through the cracks" },
+            { "chords": ["D/F#", "", "", ""], "lyric": "" },
+            { "chords": ["Em", "", "", ""], "lyric": "Now I'm tryin' to get back" },
+            { "chords": ["C", "", "", ""], "lyric": "" }
           ]
         },
         {
           "tag": "Chorus",
           "strum": "D D U U D U",
           "lines": [
-            { "chords": ["G", "D/F#"], "lyric": "But I won't hesitate no more, no more" },
-            { "chords": ["Em", "C"], "lyric": "It cannot wait, I'm yours" }
+            { "chords": ["G", "", "", ""], "lyric": "But I won't hesitate" },
+            { "chords": ["D/F#", "", "", ""], "lyric": "no more, no more" },
+            { "chords": ["Em", "", "", ""], "lyric": "It cannot wait" },
+            { "chords": ["C", "", "", ""], "lyric": "I'm yours" }
           ]
         }
       ]
@@ -127,21 +135,23 @@
       "sections": [
         {
           "tag": "Verse",
-          "strum": "D D D D D D",
+          "strum": "D D D D",
           "lines": [
-            { "chords": ["C", "", "G"], "lyric": "When I find myself in times of trouble" },
-            { "chords": ["Am", "", "Fmaj7"], "lyric": "Mother Mary comes to me" },
-            { "chords": ["C", "", "G"], "lyric": "Speaking words of wisdom" },
-            { "chords": ["F", "C/E", "Dm", "C"], "lyric": "Let it be" }
+            { "chords": ["C", "", "G", ""], "lyric": "When I find myself in times of trouble" },
+            { "chords": ["Am", "", "F", ""], "lyric": "Mother Mary comes to me" },
+            { "chords": ["C", "", "G", ""], "lyric": "Speaking words of wisdom" },
+            { "chords": ["F", "", "C", ""], "lyric": "Let it" },
+            { "chords": ["Dm", "", "C", ""], "lyric": "be" }
           ]
         },
         {
           "tag": "Chorus",
-          "strum": "D D D D D D",
+          "strum": "D D D D",
           "lines": [
-            { "chords": ["C", "G"], "lyric": "Let it be, let it be" },
-            { "chords": ["Am", "Fmaj7"], "lyric": "Let it be, let it be" },
-            { "chords": ["C", "G", "F", "C"], "lyric": "Whisper words of wisdom, let it be" }
+            { "chords": ["Am", "", "G", ""], "lyric": "Let it be, let it be" },
+            { "chords": ["F", "", "C", ""], "lyric": "Let it be, let it be" },
+            { "chords": ["G", "", "F", ""], "lyric": "Whisper words of wisdom" },
+            { "chords": ["C", "", "", ""], "lyric": "let it be" }
           ]
         }
       ]
@@ -158,21 +168,26 @@
       "sections": [
         {
           "tag": "Verse",
-          "strum": "D D U D U",
+          "strum": "D D D D",
           "lines": [
-            { "chords": ["G", "", "Em"], "lyric": "I found a love for me" },
-            { "chords": ["C", "", "D"], "lyric": "Darling, just dive right in and follow my lead" },
-            { "chords": ["G", "", "Em"], "lyric": "Well, I found a girl, beautiful and sweet" },
-            { "chords": ["C", "", "D"], "lyric": "I never knew you were the someone waiting for me" }
+            { "chords": ["G", "", "Em", ""], "lyric": "I found a love for me" },
+            { "chords": ["C", "", "D", ""], "lyric": "Darling, just dive right in and follow my lead" },
+            { "chords": ["G", "", "Em", ""], "lyric": "Well, I found a girl, beautiful and sweet" },
+            { "chords": ["C", "", "D", ""], "lyric": "I never knew you were the someone waiting for me" }
           ]
         },
         {
           "tag": "Chorus",
-          "strum": "D D U D U D U",
+          "strum": "D D D D",
           "lines": [
-            { "chords": ["G", "Em"], "lyric": "'Cause we were just kids when we fell in love" },
-            { "chords": ["C", "D"], "lyric": "Not knowing what it was" },
-            { "chords": ["G", "Em", "C", "D"], "lyric": "I will not give you up this time" }
+            { "chords": ["Em", "", "", ""], "lyric": "Baby, I'm dancing in the dark" },
+            { "chords": ["C", "", "", ""], "lyric": "with you between my arms" },
+            { "chords": ["G", "", "", ""], "lyric": "Barefoot on the grass" },
+            { "chords": ["D", "", "", ""], "lyric": "listening to our favorite song" },
+            { "chords": ["Em", "", "", ""], "lyric": "When you said you looked a mess" },
+            { "chords": ["C", "", "", ""], "lyric": "I whispered underneath my breath" },
+            { "chords": ["G", "", "", ""], "lyric": "But you heard it, darling" },
+            { "chords": ["D", "", "", ""], "lyric": "you look perfect tonight" }
           ]
         }
       ]
