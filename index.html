@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#1C1B22">
-<title>Songbook</title>
+<title>Akkoordje voor Noortje</title>
 <style>
   :root{
     --ink:#1C1B22;
@@ -450,17 +450,19 @@
     <div class="brand">
       <div class="mark">
         <!-- <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.2.5-1 2-2.2 4-2.2 3.5 0 5.5 3.5 3.5 7.5C19 16.65 12 21 12 21z" fill="#D98E8E"/></svg> -->
-        <!-- <span class="eyebrow">t</span> -->
+        <!-- <span class="eyebrow">for you</span> -->
       </div>
-      <h1>Huts</h1>
+      <h1>Akkoordje voor Noortje</h1>
     </div>
-    <div class="header-note" id="headerNote">Kies een nummer om te spelen</div>
+    <div class="header-note" id="headerNote">Kies een nummer, en speel mee!</div>
   </header>
 
+  <!--
   <div class="dedication" id="dedication">
     <button class="close-ded" id="closeDed">✕</button>
-    <!-- Made this so you'd always have something easy to play along to — <b>no ads, no premium wall, no nonsense.</b> Just the songs, and a little love stitched into the corners. -->
+    Made this so you'd always have something easy to play along to — <b>no ads, no premium wall, no nonsense.</b> Just the songs, and a little love stitched into the corners.
   </div>
+  -->
 
   <div class="toolbar">
     <div class="search">
@@ -471,12 +473,14 @@
 
   <div class="list" id="list"></div>
 
+  <!-- Add song FAB disabled for now — testing
   <div class="fab">
     <button id="addSongBtn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
       Add song
     </button>
   </div>
+  -->
 </div>
 
 <!-- ================= PLAYER ================= -->
@@ -489,9 +493,12 @@
       <h2 id="playerTitle">Song title</h2>
       <span id="playerArtist">Artist</span>
     </div>
+    <!-- heart-btn disabled for now — testing
     <button class="icon-btn" id="playerHeart">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.2.5-1 2-2.2 4-2.2 3.5 0 5.5 3.5 3.5 7.5C19 16.65 12 21 12 21z"/></svg>
     </button>
+    -->
+    <div class="icon-btn" style="visibility:hidden;" aria-hidden="true"></div>
   </div>
 
   <div class="info-strip" id="infoStrip"></div>
@@ -551,7 +558,7 @@
   </div>
 </div>
 
-<!-- ================= ADD SONG SHEET ================= -->
+<!-- ================= ADD SONG SHEET (disabled for now — testing) =================
 <div class="sheet-backdrop" id="sheetBackdrop"></div>
 <div class="sheet" id="addSheet">
   <div class="sheet-handle"></div>
@@ -591,9 +598,7 @@
     </div>
     <div class="field">
       <label>Chords &amp; lines</label>
-      <textarea id="inBody" placeholder="[Verse]
-Em        G          D        A
-Today is gonna be the day"></textarea>
+      <textarea id="inBody" placeholder="[Verse] Em G D A Today is gonna be the day"></textarea>
     </div>
     <div class="hint">
       One line of chords, then the line it goes with. Start a section with a tag like <code>[Verse]</code> or <code>[Chorus]</code> on its own line. Blank lines are fine.
@@ -601,6 +606,7 @@ Today is gonna be the day"></textarea>
     <button class="save-btn" id="saveSongBtn" disabled>Save to songbook</button>
   </div>
 </div>
+================= END DISABLED BLOCK ================= -->
 
 <div class="toast" id="toast"></div>
 
@@ -840,19 +846,24 @@ Today is gonna be the day"></textarea>
           </div>
         </div>
         <span class="diff-pill ${s.difficulty==='easy'?'diff-easy':'diff-mid'}">${s.difficulty==='easy'?'Easy':'Intermediate'}</span>
+        <!-- heart-btn disabled for now — testing
         <button class="heart-btn ${isFav(s.id)?'active':''}" data-id="${s.id}">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.2.5-1 2-2.2 4-2.2 3.5 0 5.5 3.5 3.5 7.5C19 16.65 12 21 12 21z"/></svg>
         </button>
+        -->
       `;
       c.addEventListener("click", (e)=>{
         if(e.target.closest(".heart-btn")) return;
         openPlayer(s.id);
       });
-      c.querySelector(".heart-btn").addEventListener("click", (e)=>{
-        e.stopPropagation();
-        toggleFav(s.id);
-        renderList(searchInput.value);
-      });
+      const heartBtn = c.querySelector(".heart-btn");
+      if(heartBtn){
+        heartBtn.addEventListener("click", (e)=>{
+          e.stopPropagation();
+          toggleFav(s.id);
+          renderList(searchInput.value);
+        });
+      }
       return c;
     }
 
@@ -878,7 +889,7 @@ Today is gonna be the day"></textarea>
 
   searchInput.addEventListener("input", ()=> renderList(searchInput.value));
 
-  /* ===================== DEDICATION BANNER ===================== */
+  /* ===================== DEDICATION BANNER (disabled for now — testing) =====================
   const dedication = document.getElementById("dedication");
   const headerNote = document.getElementById("headerNote");
   if(store.dedicationClosed){ dedication.style.display = "none"; }
@@ -889,12 +900,16 @@ Today is gonna be the day"></textarea>
   });
 
   const NOTES = [
-    "Kies een nummer om te spelen",
-    "Veel plezier met het spelen!",
-    "Geniet van de muziek!"
-
+    "pick a song, pick up the guitar",
+    "made with you in mind",
+    "no ads. no premium wall. just us.",
+    "play it badly a few times — that's how it's done"
   ];
   headerNote.textContent = NOTES[Math.floor(Math.random()*NOTES.length)];
+  ===================== END DISABLED BLOCK ===================== */
+  const headerNote = document.getElementById("headerNote");
+  headerNote.textContent = "Kies een nummer, en speel mee!";
+
 
   /* ===================== PLAYER ===================== */
   const player = document.getElementById("player");
@@ -918,7 +933,7 @@ Today is gonna be the day"></textarea>
   const tapTempoBtn = document.getElementById("tapTempoBtn");
 
   const BEAT_PX = 46;          // must match .beat-cell width in CSS
-  const DEFAULT_BEATS_PER_CHORD = 4;
+  const BAR_LENGTH_BEATS = 4;  // purely visual: draws a bar line every 4 beats
 
   let currentSong = null;
   let beatTimeline = [];   // [{chord, sectionTag, strum, isChordStart, isSectionStart}, ...] one per beat
@@ -935,7 +950,7 @@ Today is gonna be the day"></textarea>
     currentSong = song;
     playerTitle.textContent = song.title;
     playerArtist.textContent = song.artist;
-    playerHeart.classList.toggle("active", isFav(id));
+    if(playerHeart) playerHeart.classList.toggle("active", isFav(id));
 
     infoStrip.innerHTML = `
       <div class="info-chip">${escapeHtml(song.capo)}</div>
@@ -950,8 +965,13 @@ Today is gonna be the day"></textarea>
 
   /* Expands a song's sections/lines/chords into a flat per-beat timeline,
      plus a parallel list of lyric blocks positioned by beat offset.
-     Each chord defaults to DEFAULT_BEATS_PER_CHORD beats (editable later
-     per-song since real timing isn't derivable from BPM alone). */
+
+     Each entry in a line's chords array is exactly ONE beat:
+       - a chord name ("G", "D/F#", ...) strikes that chord on this beat
+       - "" (empty string) holds whatever chord came before it
+       - "-" is an explicit silence/no-chord beat (distinct from "hold")
+     A line with no leading chord on its first beat is treated as silence
+     for that beat, since there's nothing earlier in the line to hold. */
   function buildTimeline(song){
     beatTimeline = [];
     lyricBlocks = [];
@@ -960,22 +980,36 @@ Today is gonna be the day"></textarea>
     song.sections.forEach(sec=>{
       const strum = sec.strum || "D D D D";
       let isFirstBeatOfSection = true;
+      let heldChord = null; // carries across blank slots within a line
       sec.lines.forEach(ln=>{
-        const chordsInLine = (ln.chords && ln.chords.length) ? ln.chords : [""];
+        const slots = (ln.chords && ln.chords.length) ? ln.chords : ["-"];
         const lineStartBeat = beatCursor;
-        chordsInLine.forEach(ch=>{
-          const chordName = (ch && ch.trim()) ? ch.trim() : null;
-          for(let b=0; b<DEFAULT_BEATS_PER_CHORD; b++){
-            beatTimeline.push({
-              chord: chordName,
-              sectionTag: sec.tag,
-              strum: strum,
-              isChordStart: (b===0),
-              isSectionStart: isFirstBeatOfSection && (b===0)
-            });
-            isFirstBeatOfSection = false;
+        heldChord = null; // each line starts fresh; blanks at the very start of a line are silence, not a leak from the previous line
+        slots.forEach(slot=>{
+          const trimmed = (slot || "").trim();
+          let chordName, isStart;
+          if(trimmed === "" ){
+            // hold: same chord as previous beat in this line (or silence if none yet)
+            chordName = heldChord;
+            isStart = false;
+          } else if(trimmed === "-"){
+            chordName = null;
+            isStart = true; // a fresh silence still counts as its own "event" visually
+            heldChord = null;
+          } else {
+            chordName = trimmed;
+            isStart = true;
+            heldChord = trimmed;
           }
-          beatCursor += DEFAULT_BEATS_PER_CHORD;
+          beatTimeline.push({
+            chord: chordName,
+            sectionTag: sec.tag,
+            strum: strum,
+            isChordStart: isStart,
+            isSectionStart: isFirstBeatOfSection
+          });
+          isFirstBeatOfSection = false;
+          beatCursor += 1;
         });
         const lineSpanBeats = beatCursor - lineStartBeat;
         lyricBlocks.push({
@@ -996,7 +1030,7 @@ Today is gonna be the day"></textarea>
     beatTimeline.forEach((b, i)=>{
       const isStart = b.isChordStart;
       const classes = ["beat-cell"];
-      if(i % DEFAULT_BEATS_PER_CHORD === 0) classes.push("beat-1");
+      if(i % BAR_LENGTH_BEATS === 0) classes.push("beat-1");
       if(isStart) classes.push("chord-start");
       if(b.isSectionStart) classes.push("section-start");
       html += `<div class="${classes.join(' ')}">
@@ -1184,19 +1218,21 @@ Today is gonna be the day"></textarea>
     updatePlaybackVisuals(elapsedMs);
   });
 
-  playerHeart.addEventListener("click", ()=>{
-    if(!currentSong) return;
-    toggleFav(currentSong.id);
-    playerHeart.classList.toggle("active", isFav(currentSong.id));
-    renderList(searchInput.value);
-  });
+  if(playerHeart){
+    playerHeart.addEventListener("click", ()=>{
+      if(!currentSong) return;
+      toggleFav(currentSong.id);
+      playerHeart.classList.toggle("active", isFav(currentSong.id));
+      renderList(searchInput.value);
+    });
+  }
 
   document.getElementById("closePlayer").addEventListener("click", ()=>{
     pause();
     player.classList.remove("open");
   });
 
-  /* ===================== ADD SONG SHEET ===================== */
+  /* ===================== ADD SONG SHEET (disabled for now — testing) =====================
   const sheetBackdrop = document.getElementById("sheetBackdrop");
   const addSheet = document.getElementById("addSheet");
   const addSongBtn = document.getElementById("addSongBtn");
@@ -1252,6 +1288,7 @@ Today is gonna be the day"></textarea>
     validateForm();
     showToast("Added to the songbook 🤍");
   });
+  ===================== END DISABLED BLOCK ===================== */
 
   /* ===================== TOAST ===================== */
   let toastTimer = null;
