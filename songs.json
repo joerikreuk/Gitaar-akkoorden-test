@@ -4,50 +4,245 @@
       "id": "starter-knockin",
       "title": "Knockin' on Heaven's Door",
       "artist": "Bob Dylan",
-      "capo": "No capo",
+      "capo": "Geen capo",
       "bpm": 72,
       "difficulty": "easy",
-      "color": { "bg": "#3A3142", "fg": "#E8C9C9" },
+      "color": {
+        "bg": "#3A3142",
+        "fg": "#E8C9C9"
+      },
       "favorite": true,
       "sections": [
         {
           "tag": "Verse",
           "strum": "D D U D U D",
           "lines": [
-            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Mama take this badge off of me" },
-            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "I can't use it anymore" },
-            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "It's gettin' dark, too dark to see" },
-            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Feel like I'm knockin' on heaven's door" }
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "Am",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Mama take this badge off of me"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "I can't use it anymore"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "Am",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "It's gettin' dark, too dark to see"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Feel like I'm knockin' on heaven's door"
+            }
           ]
         },
         {
           "tag": "Chorus",
           "strum": "D D U D U D",
           "lines": [
-            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" }
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "Am",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Knock, knock, knockin' on heaven's door"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Knock, knock, knockin' on heaven's door"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "Am",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Knock, knock, knockin' on heaven's door"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Knock, knock, knockin' on heaven's door"
+            }
           ]
         },
         {
           "tag": "Verse 2",
           "strum": "D D U D U D",
           "lines": [
-            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Mama put my guns in the ground" },
-            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "I can't shoot them anymore" },
-            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "That long black cloud is comin' down" },
-            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Feel like I'm knockin' on heaven's door" }
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "Am",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Mama put my guns in the ground"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "I can't shoot them anymore"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "Am",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "That long black cloud is comin' down"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Feel like I'm knockin' on heaven's door"
+            }
           ]
         },
         {
           "tag": "Chorus",
           "strum": "D D U D U D",
           "lines": [
-            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["G", "", "D", "", "Am", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" },
-            { "chords": ["G", "", "D", "", "C", "", "", ""], "lyric": "Knock, knock, knockin' on heaven's door" }
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "Am",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Knock, knock, knockin' on heaven's door"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Knock, knock, knockin' on heaven's door"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "Am",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Knock, knock, knockin' on heaven's door"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D",
+                "",
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Knock, knock, knockin' on heaven's door"
+            }
           ]
         }
       ]
@@ -56,33 +251,200 @@
       "id": "starter-threelittlebirds",
       "title": "Three Little Birds",
       "artist": "Bob Marley",
-      "capo": "No capo",
+      "capo": "Geen capo",
       "bpm": 78,
       "difficulty": "easy",
-      "color": { "bg": "#2F3A30", "fg": "#C9E8C9" },
+      "color": {
+        "bg": "#2F3A30",
+        "fg": "#C9E8C9"
+      },
       "favorite": false,
       "sections": [
         {
           "tag": "Verse",
           "strum": "D D D D",
           "lines": [
-            { "chords": ["A", "", "", "", "", "", "", "", "D", "", "", "", "A", "", "", ""], "lyric": "Don't worry about a thing" },
-            { "chords": ["A", "", "", "", "", "", "", "", "E", "", "", "", "A", "", "", ""], "lyric": "'Cause every little thing is gonna be alright" },
-            { "chords": ["A", "", "", "", "", "", "", "", "D", "", "", "", "A", "", "", ""], "lyric": "Singin' don't worry about a thing" },
-            { "chords": ["A", "", "", "", "", "", "", "", "E", "", "", "", "A", "", "", ""], "lyric": "'Cause every little thing is gonna be alright" }
+            {
+              "chords": [
+                "A",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "D",
+                "",
+                "",
+                "",
+                "A",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Don't worry about a thing"
+            },
+            {
+              "chords": [
+                "A",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "E",
+                "",
+                "",
+                "",
+                "A",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "'Cause every little thing is gonna be alright"
+            },
+            {
+              "chords": [
+                "A",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "D",
+                "",
+                "",
+                "",
+                "A",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Singin' don't worry about a thing"
+            },
+            {
+              "chords": [
+                "A",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "E",
+                "",
+                "",
+                "",
+                "A",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "'Cause every little thing is gonna be alright"
+            }
           ]
         },
         {
           "tag": "Chorus",
           "strum": "D D U D",
           "lines": [
-            { "chords": ["A", "", "", "", "", "", "", ""], "lyric": "Rise up this mornin'" },
-            { "chords": ["E", "", "", "", "", "", "", ""], "lyric": "Smiled with the risin' sun" },
-            { "chords": ["A", "", "", "", "", "", "", ""], "lyric": "Three little birds" },
-            { "chords": ["D", "", "", "", "", "", "", ""], "lyric": "Pitch by my doorstep" },
-            { "chords": ["A", "", "", "", "", "", "", ""], "lyric": "Singin' sweet songs of melodies pure and true" },
-            { "chords": ["E", "", "", "", "", "", "", ""], "lyric": "Sayin', this is my message to you" },
-            { "chords": ["D", "", "", "", "A", "", "", ""], "lyric": "Sayin' don't worry 'bout a thing" }
+            {
+              "chords": [
+                "A",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Rise up this mornin'"
+            },
+            {
+              "chords": [
+                "E",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Smiled with the risin' sun"
+            },
+            {
+              "chords": [
+                "A",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Three little birds"
+            },
+            {
+              "chords": [
+                "D",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Pitch by my doorstep"
+            },
+            {
+              "chords": [
+                "A",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Singin' sweet songs of melodies pure and true"
+            },
+            {
+              "chords": [
+                "E",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Sayin', this is my message to you"
+            },
+            {
+              "chords": [
+                "D",
+                "",
+                "",
+                "",
+                "A",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Sayin' don't worry 'bout a thing"
+            }
           ]
         }
       ]
@@ -92,33 +454,661 @@
       "title": "I'm Yours",
       "artist": "Jason Mraz",
       "capo": "Capo 4",
-      "bpm": 78,
+      "bpm": 151,
       "difficulty": "easy",
-      "color": { "bg": "#3A3324", "fg": "#E8D8B0" },
+      "color": {
+        "bg": "#3A3324",
+        "fg": "#E8D8B0"
+      },
       "favorite": true,
       "sections": [
         {
-          "tag": "Verse",
+          "tag": "Intro",
           "strum": "D D U U D U",
           "lines": [
-            { "chords": ["G", "", "", ""], "lyric": "Well, you done done me" },
-            { "chords": ["D/F#", "", "", ""], "lyric": "and you bet I felt it" },
-            { "chords": ["Em", "", "", ""], "lyric": "I tried to be chill" },
-            { "chords": ["C", "", "", ""], "lyric": "but you're so hot that I melted" },
-            { "chords": ["G", "", "", ""], "lyric": "I fell right through the cracks" },
-            { "chords": ["D/F#", "", "", ""], "lyric": "" },
-            { "chords": ["Em", "", "", ""], "lyric": "Now I'm tryin' to get back" },
-            { "chords": ["C", "", "", ""], "lyric": "" }
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": ""
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": ""
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": ""
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": ""
+            }
           ]
         },
         {
-          "tag": "Chorus",
+          "tag": "Verse 1",
           "strum": "D D U U D U",
           "lines": [
-            { "chords": ["G", "", "", ""], "lyric": "But I won't hesitate" },
-            { "chords": ["D/F#", "", "", ""], "lyric": "no more, no more" },
-            { "chords": ["Em", "", "", ""], "lyric": "It cannot wait" },
-            { "chords": ["C", "", "", ""], "lyric": "I'm yours" }
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Well, you done done me in, you bet I felt it"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "I tried to be chill, but you're so hot that I melted"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "I fell right through the cracks"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Now I'm trying to get back"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Before the cool done run out I'll be giving it my bestest"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "And nothing's gonna stop me but divine intervention"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "I reckon it's again my turn"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "To win some or learn some"
+            }
+          ]
+        },
+        {
+          "tag": "Chorus 1",
+          "strum": "D D U U D U",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "D/F#",
+                "",
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "But I won't hesitate no more, no more"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "It cannot wait, I'm yours"
+            }
+          ]
+        },
+        {
+          "tag": "Intro 2",
+          "strum": "D D U U D U",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": ""
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": ""
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": ""
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Hmm (hey, hey)"
+            }
+          ]
+        },
+        {
+          "tag": "Verse 2",
+          "strum": "D D U U D U",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Well, open up your mind and see like me"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Open up your plans and, damn, you're free"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Look into your heart and you'll find love, love, love, love"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D/F#",
+                ""
+              ],
+              "lyric": "Listen to the music of the moment, people dance and sing"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "We're just one big family"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "And it's our God-forsaken right to be loved, loved, loved, loved"
+            },
+            {
+              "chords": [
+                "A7",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "loved"
+            }
+          ]
+        },
+        {
+          "tag": "Chorus 2",
+          "strum": "D D U U D U",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "D/F#",
+                "",
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "So I won't hesitate no more, no more"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "It cannot wait, I'm sure"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D/F#",
+                ""
+              ],
+              "lyric": "There's no need to complicate"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Our time is short"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "This is our fate, I'm yours"
+            }
+          ]
+        },
+        {
+          "tag": "Bridge",
+          "strum": "D D U U D U",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "D/F#",
+                "",
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Do, do, do, do you, but do you, do you, do, do, but do you want to"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "come on"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Scooch on over closer, dear?"
+            },
+            {
+              "chords": [
+                "A7",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "And I will nibble your ear"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "A-su-da-ba-ba-ba-ba-bum"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "Whoa-oooooh oh-oh-oh-oh-oh-oh"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "C",
+                ""
+              ],
+              "lyric": "Whoa-oh-oh-oh-oh-oh-oh ohwo-ohwo-oh"
+            },
+            {
+              "chords": [
+                "A7",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Uh-huh, mmm-hmm"
+            }
+          ]
+        },
+        {
+          "tag": "Verse 3",
+          "strum": "D D U U D U",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "I've been spending way too long checking my tongue in the mirror"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "And bending over backwards just to try to see it clearer"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "But my breath fogged up the glass"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "And so I drew a new face and I laughed"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "I guess what I be saying is there ain't no better reason"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "To rid yourself of vanities and just go with the seasons"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "It's what we aim to do"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Our name is our virtue"
+            }
+          ]
+        },
+        {
+          "tag": "Chorus 3",
+          "strum": "D D U U D U",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "D/F#",
+                "",
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "But I won't hesitate no more, no more"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "It cannot wait, I'm yours"
+            }
+          ]
+        },
+        {
+          "tag": "Chorus 4",
+          "strum": "D D U U D U",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Well, open up your mind and see like me (I won't hesitate)"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Open up your plans and, damn, you're free (no more, no more)"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "And look into your heart, and you'll find (it cannot wait)"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "That the sky is yours (I'm sure)"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "So please don't, please don't, please don't (no need to complicate)"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "There's no need to complicate ('cause our time is short)"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "'Cause our time is short (this is)"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "This, oh this, this is our fate (our fate)"
+            },
+            {
+              "chords": [
+                "A7",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "I'm yours"
+            }
+          ]
+        },
+        {
+          "tag": "Outro",
+          "strum": "D D U U D U",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Bra-bop-mm, da-bap-bop-mm-day"
+            },
+            {
+              "chords": [
+                "D/F#",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Do-do-do-do, do-do-do-do, do-do-do, mm-mm-mm-mm (hey, hey)"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Oh, I'm yours"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Oh, I'm yours"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "D/F#",
+                ""
+              ],
+              "lyric": "Oh, whoa, baby, do you believe I'm yours?"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "C",
+                ""
+              ],
+              "lyric": "You best believe, you best believe I'm yours, mmm-hmm"
+            }
           ]
         }
       ]
@@ -127,31 +1117,106 @@
       "id": "starter-letitbe",
       "title": "Let It Be",
       "artist": "The Beatles",
-      "capo": "No capo",
+      "capo": "Geen capo",
       "bpm": 73,
       "difficulty": "mid",
-      "color": { "bg": "#283142", "fg": "#BFD6E8" },
+      "color": {
+        "bg": "#283142",
+        "fg": "#BFD6E8"
+      },
       "favorite": false,
       "sections": [
         {
           "tag": "Verse",
           "strum": "D D D D",
           "lines": [
-            { "chords": ["C", "", "G", ""], "lyric": "When I find myself in times of trouble" },
-            { "chords": ["Am", "", "F", ""], "lyric": "Mother Mary comes to me" },
-            { "chords": ["C", "", "G", ""], "lyric": "Speaking words of wisdom" },
-            { "chords": ["F", "", "C", ""], "lyric": "Let it" },
-            { "chords": ["Dm", "", "C", ""], "lyric": "be" }
+            {
+              "chords": [
+                "C",
+                "",
+                "G",
+                ""
+              ],
+              "lyric": "When I find myself in times of trouble"
+            },
+            {
+              "chords": [
+                "Am",
+                "",
+                "F",
+                ""
+              ],
+              "lyric": "Mother Mary comes to me"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "G",
+                ""
+              ],
+              "lyric": "Speaking words of wisdom"
+            },
+            {
+              "chords": [
+                "F",
+                "",
+                "C",
+                ""
+              ],
+              "lyric": "Let it"
+            },
+            {
+              "chords": [
+                "Dm",
+                "",
+                "C",
+                ""
+              ],
+              "lyric": "be"
+            }
           ]
         },
         {
           "tag": "Chorus",
           "strum": "D D D D",
           "lines": [
-            { "chords": ["Am", "", "G", ""], "lyric": "Let it be, let it be" },
-            { "chords": ["F", "", "C", ""], "lyric": "Let it be, let it be" },
-            { "chords": ["G", "", "F", ""], "lyric": "Whisper words of wisdom" },
-            { "chords": ["C", "", "", ""], "lyric": "let it be" }
+            {
+              "chords": [
+                "Am",
+                "",
+                "G",
+                ""
+              ],
+              "lyric": "Let it be, let it be"
+            },
+            {
+              "chords": [
+                "F",
+                "",
+                "C",
+                ""
+              ],
+              "lyric": "Let it be, let it be"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "F",
+                ""
+              ],
+              "lyric": "Whisper words of wisdom"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "let it be"
+            }
           ]
         }
       ]
@@ -163,34 +1228,4113 @@
       "capo": "Capo 1",
       "bpm": 63,
       "difficulty": "mid",
-      "color": { "bg": "#3A2A36", "fg": "#E8C0DC" },
+      "color": {
+        "bg": "#3A2A36",
+        "fg": "#E8C0DC"
+      },
       "favorite": true,
       "sections": [
         {
           "tag": "Verse",
           "strum": "D D D D",
           "lines": [
-            { "chords": ["G", "", "Em", ""], "lyric": "I found a love for me" },
-            { "chords": ["C", "", "D", ""], "lyric": "Darling, just dive right in and follow my lead" },
-            { "chords": ["G", "", "Em", ""], "lyric": "Well, I found a girl, beautiful and sweet" },
-            { "chords": ["C", "", "D", ""], "lyric": "I never knew you were the someone waiting for me" }
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "I found a love for me"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "D",
+                ""
+              ],
+              "lyric": "Darling, just dive right in and follow my lead"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "Well, I found a girl, beautiful and sweet"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "D",
+                ""
+              ],
+              "lyric": "I never knew you were the someone waiting for me"
+            }
           ]
         },
         {
           "tag": "Chorus",
           "strum": "D D D D",
           "lines": [
-            { "chords": ["Em", "", "", ""], "lyric": "Baby, I'm dancing in the dark" },
-            { "chords": ["C", "", "", ""], "lyric": "with you between my arms" },
-            { "chords": ["G", "", "", ""], "lyric": "Barefoot on the grass" },
-            { "chords": ["D", "", "", ""], "lyric": "listening to our favorite song" },
-            { "chords": ["Em", "", "", ""], "lyric": "When you said you looked a mess" },
-            { "chords": ["C", "", "", ""], "lyric": "I whispered underneath my breath" },
-            { "chords": ["G", "", "", ""], "lyric": "But you heard it, darling" },
-            { "chords": ["D", "", "", ""], "lyric": "you look perfect tonight" }
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Baby, I'm dancing in the dark"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "with you between my arms"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "Barefoot on the grass"
+            },
+            {
+              "chords": [
+                "D",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "listening to our favorite song"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "When you said you looked a mess"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "I whispered underneath my breath"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "But you heard it, darling"
+            },
+            {
+              "chords": [
+                "D",
+                "",
+                "",
+                ""
+              ],
+              "lyric": "you look perfect tonight"
+            }
           ]
         }
       ]
+    },
+    {
+      "id": "racoon-oceaan",
+      "title": "Oceaan",
+      "artist": "Racoon",
+      "capo": "Capo 2",
+      "bpm": 94,
+      "youtubeId": "GlIwRPP-65w",
+      "difficulty": "mid",
+      "color": {
+        "bg": "#1E2D3A",
+        "fg": "#B8D4E8"
+      },
+      "favorite": false,
+      "sections": [
+        {
+          "tag": "Intro",
+          "strum": "Tokkel: G Em G Em",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": ""
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": ""
+            }
+          ]
+        },
+        {
+          "tag": "Verse 1",
+          "strum": "Tokkel: G Em G Em",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "Er is verrekte veel te zeggen"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "en te liegen nog veel meer"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "Heel veel bagger bloot te leggen"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "al doet het graven nog zo'n zeer"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "Ik ben een eikel maar ik leer"
+            }
+          ]
+        },
+        {
+          "tag": "Chorus",
+          "strum": "Tokkel: C Am Em D",
+          "lines": [
+            {
+              "chords": [
+                "C",
+                "",
+                "Am",
+                ""
+              ],
+              "lyric": "Een oceaan om in te vluchten"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "D",
+                ""
+              ],
+              "lyric": "nooit jaloers te hoeven zijn"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "Am",
+                ""
+              ],
+              "lyric": "Liefde om je hart te luchten"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "D",
+                ""
+              ],
+              "lyric": "Een oceaan, hoe lekker zou het zijn"
+            }
+          ]
+        },
+        {
+          "tag": "Verse 2",
+          "strum": "Tokkel: G Em G Em",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "Was er iets waar ik om wenste"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "voordat de put droog kwam te staan"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "Dan was het lang zullen ze leven"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "familie waar ik veel van hou"
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": "en voor wie ik sterven zou"
+            }
+          ]
+        },
+        {
+          "tag": "Bridge",
+          "strum": "Tokkel: F G",
+          "lines": [
+            {
+              "chords": [
+                "F",
+                "",
+                "G",
+                ""
+              ],
+              "lyric": "Een oceaan om in te schuilen"
+            },
+            {
+              "chords": [
+                "F",
+                "",
+                "G",
+                ""
+              ],
+              "lyric": "nooit alleen meer hoeven zijn"
+            },
+            {
+              "chords": [
+                "F",
+                "",
+                "G",
+                ""
+              ],
+              "lyric": "Ik heb gesmeekt niet meer te huilen"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "F",
+                ""
+              ],
+              "lyric": "alsjeblieft"
+            },
+            {
+              "chords": [
+                "F",
+                "",
+                "G",
+                ""
+              ],
+              "lyric": "Het leven jaagt geen angst meer aan"
+            },
+            {
+              "chords": [
+                "F",
+                "",
+                "G",
+                ""
+              ],
+              "lyric": "ik heb al zo ver moeten kruipen"
+            },
+            {
+              "chords": [
+                "F",
+                "",
+                "G",
+                ""
+              ],
+              "lyric": "Het laatste stuk zal ook wel gaan"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "F",
+                ""
+              ],
+              "lyric": "tot ik ga staan"
+            }
+          ]
+        },
+        {
+          "tag": "Chorus",
+          "strum": "Tokkel: C Am Em D",
+          "lines": [
+            {
+              "chords": [
+                "C",
+                "",
+                "Am",
+                ""
+              ],
+              "lyric": "Een oceaan om in te vluchten"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "D",
+                ""
+              ],
+              "lyric": "nooit jaloers te hoeven zijn"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "Am",
+                ""
+              ],
+              "lyric": "Liefde om je hart te luchten"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "D",
+                ""
+              ],
+              "lyric": "Een oceaan alleen van mij"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "Am",
+                ""
+              ],
+              "lyric": "Een oceaan om te verzuipen"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "D",
+                ""
+              ],
+              "lyric": "een dag of wat een held te zijn"
+            },
+            {
+              "chords": [
+                "C",
+                "",
+                "Am",
+                ""
+              ],
+              "lyric": "Laat die ander nu maar kruipen"
+            },
+            {
+              "chords": [
+                "Em",
+                "",
+                "D",
+                ""
+              ],
+              "lyric": "Een oceaan vol tranen is van mij"
+            }
+          ]
+        },
+        {
+          "tag": "Outro",
+          "strum": "Tokkel: G Em G Em",
+          "lines": [
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": ""
+            },
+            {
+              "chords": [
+                "G",
+                "",
+                "Em",
+                ""
+              ],
+              "lyric": ""
+            }
+          ]
+        }
+      ],
+      "tabSections": [
+        {
+          "tag": "Intro",
+          "strum": "Tokkel: G Em G Em",
+          "blocks": [
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            }
+          ],
+          "lyric": ""
+        },
+        {
+          "tag": "Verse 1",
+          "strum": "Tokkel: G Em G Em",
+          "blocks": [
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            }
+          ],
+          "lyric": "Er is verrekte veel te zeggen / en te liegen nog veel meer / Heel veel bagger bloot te leggen / al doet het graven nog zo'n zeer / Ik ben een eikel maar ik leer"
+        },
+        {
+          "tag": "Chorus",
+          "strum": "Tokkel: C Am Em D",
+          "blocks": [
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            }
+          ],
+          "lyric": "Een oceaan om in te vluchten / nooit jaloers te hoeven zijn / Liefde om je hart te luchten / Een oceaan, hoe lekker zou het zijn"
+        },
+        {
+          "tag": "Verse 2",
+          "strum": "Tokkel: G Em G Em",
+          "blocks": [
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            }
+          ],
+          "lyric": "Was er iets waar ik om wenste / voordat de put droog kwam te staan / Dan was het lang zullen ze leven / familie waar ik veel van hou / en voor wie ik sterven zou"
+        },
+        {
+          "tag": "Bridge",
+          "strum": "Tokkel: F G",
+          "blocks": [
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 1,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 1,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "F"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "G"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 1,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 1,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "F"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "G"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 1,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 1,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "F"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "G"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 1,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 3,
+                  "x": 80,
+                  "t": null
+                }
+              ],
+              "label": "F"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 1,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 1,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "F"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "G"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 1,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 1,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "F"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "G"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 1,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 1,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "F"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "G"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 120,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 1,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 3,
+                  "x": 80,
+                  "t": null
+                }
+              ],
+              "label": "F"
+            }
+          ],
+          "lyric": "Een oceaan om in te schuilen / nooit alleen meer hoeven zijn / Ik heb gesmeekt niet meer te huilen / alsjeblieft / Het leven jaagt geen angst meer aan / ik heb al zo ver moeten kruipen / Het laatste stuk zal ook wel gaan / tot ik ga staan"
+        },
+        {
+          "tag": "Chorus",
+          "strum": "Tokkel: C Am Em D",
+          "blocks": [
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 80,
+                  "t": "p"
+                },
+                {
+                  "s": 4,
+                  "f": 3,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "C"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 2,
+                  "x": 160,
+                  "t": "p"
+                }
+              ],
+              "label": "Am"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 120,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 160,
+                  "t": null
+                }
+              ],
+              "label": "Em"
+            },
+            {
+              "w": 160,
+              "notes": [
+                {
+                  "s": 1,
+                  "f": 0,
+                  "x": 0,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 40,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 80,
+                  "t": null
+                },
+                {
+                  "s": 0,
+                  "f": 2,
+                  "x": 120,
+                  "t": "h"
+                }
+              ],
+              "label": "D"
+            }
+          ],
+          "lyric": "Een oceaan om in te vluchten / nooit jaloers te hoeven zijn / Liefde om je hart te luchten / Een oceaan alleen van mij / Een oceaan om te verzuipen / een dag of wat een held te zijn / Laat die ander nu maar kruipen / Een oceaan vol tranen is van mij"
+        },
+        {
+          "tag": "Outro",
+          "strum": "Tokkel: G Em G Em",
+          "blocks": [
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 129,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 163,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 163,
+                  "t": null
+                },
+                {
+                  "s": 2,
+                  "f": 0,
+                  "x": 221,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 198,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 263,
+                  "t": "p"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 242,
+                  "t": null
+                }
+              ],
+              "label": ""
+            },
+            {
+              "w": 320,
+              "notes": [
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 14,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 0,
+                  "x": 64,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 85,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 106,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 3,
+                  "x": 122,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 157,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 170,
+                  "t": "h"
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 191,
+                  "t": null
+                },
+                {
+                  "s": 3,
+                  "f": 0,
+                  "x": 214,
+                  "t": null
+                },
+                {
+                  "s": 5,
+                  "f": 0,
+                  "x": 235,
+                  "t": null
+                },
+                {
+                  "s": 4,
+                  "f": 2,
+                  "x": 285,
+                  "t": "p"
+                }
+              ],
+              "label": ""
+            }
+          ],
+          "lyric": ""
+        }
+      ],
+      "displayMode": "tab"
     }
   ]
 }

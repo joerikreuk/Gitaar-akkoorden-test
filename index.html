@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -257,108 +257,134 @@
     font-size:15px; color:var(--parchment-dim);
   }
 
-  /* ---------- Horizontal timeline ---------- */
-  .timeline-wrap{
-    flex:1; position:relative; overflow:hidden;
-    border-top:1px solid var(--line);
-    display:flex; flex-direction:column;
-    min-height:0;
+  /* ---------- YouTube tutorial video panel (not synced, just a lesson embed) ---------- */
+  .yt-tutorial-wrap{ margin:0 18px 10px; flex-shrink:0; }
+  .yt-tutorial-toggle{
+    display:flex; align-items:center; gap:8px;
+    padding:9px 14px; background:var(--ink-2); border:1px solid var(--line); border-radius:12px;
+    cursor:pointer; font-size:13px; color:var(--parchment-dim);
   }
-  .timeline-fade-left, .timeline-fade-right{
-    position:absolute; top:0; bottom:0; width:36px; z-index:5; pointer-events:none;
+  .yt-tutorial-toggle svg{ width:14px; height:14px; color:var(--rose); flex-shrink:0; }
+  .yt-tutorial-toggle:active{ background:var(--ink-3); }
+  .yt-tutorial-holder{
+    margin-top:0; border-radius:12px; overflow:hidden;
+    aspect-ratio:16/9;
+    max-height:0; opacity:0;
+    transition:max-height 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
   }
-  .timeline-fade-left{ left:0; background:linear-gradient(90deg, var(--ink), transparent); }
-  .timeline-fade-right{ right:0; background:linear-gradient(-90deg, var(--ink), transparent); }
+  .yt-tutorial-holder.open{ max-height:280px; opacity:1; margin-top:8px; }
+  .yt-tutorial-holder iframe{ width:100%; height:100%; border:none; display:block; }
 
-  .timeline-playhead{
-    position:absolute; top:0; bottom:0; left:50%; width:2px;
-    background:var(--rose); z-index:6; pointer-events:none;
-    box-shadow:0 0 10px rgba(217,142,142,0.6);
+  /* ---------- Horizontal tab timeline (fingerpicking songs) ---------- */
+  .tab-timeline-wrap{
+    position:relative; overflow:hidden;
+    height:148px; flex-shrink:0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--ink-2);
   }
-  .timeline-playhead::before{
+  .tab-playhead{
+    position:absolute; top:0; bottom:0; left:50%; width:2px; z-index:6;
+    background:var(--rose);
+    box-shadow:0 0 12px rgba(217,142,142,0.5);
+    pointer-events:none;
+  }
+  .tab-playhead::before{
     content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
     width:0; height:0;
     border-left:5px solid transparent; border-right:5px solid transparent;
-    border-top:6px solid var(--rose);
+    border-top:7px solid var(--rose);
   }
-
-  .timeline-scroll{
-    flex:1; overflow:hidden; position:relative;
-    display:flex; flex-direction:column; justify-content:center;
+  .tab-fade-left, .tab-fade-right{
+    position:absolute; top:0; bottom:0; width:48px; z-index:5; pointer-events:none;
   }
+  .tab-fade-left{ left:0; background:linear-gradient(90deg, var(--ink-2), transparent); }
+  .tab-fade-right{ right:0; background:linear-gradient(-90deg, var(--ink-2), transparent); }
 
-  .timeline-track{
-    display:flex; align-items:stretch; height:64px; position:relative;
+  .tab-scroll-area{
+    position:absolute; inset:0; overflow:hidden;
+  }
+  .tab-track{
+    position:absolute; top:0; bottom:0; left:0;
     will-change:transform;
   }
-  .beat-cell{
-    flex-shrink:0; width:46px; height:100%;
+  /* The 6 string lines, rendered as SVG inside .tab-track */
+  .tab-track svg{ position:absolute; top:0; left:0; overflow:visible; }
+
+  /* String labels on the left (fixed, above the fade) */
+  .tab-string-labels{
+    position:absolute; left:0; top:0; bottom:0; width:24px; z-index:7;
+    display:flex; flex-direction:column; justify-content:space-around;
+    padding:12px 0;
+    background:var(--ink-2);
     border-right:1px solid var(--line);
-    position:relative;
-    display:flex; align-items:center; justify-content:center;
   }
-  .beat-cell.beat-1{ border-left:1px solid var(--line); }
-  .beat-cell .chord-fill{
-    position:absolute; inset:4px; border-radius:8px;
-    background:var(--ink-3);
-    transition:background 0.15s ease;
+  .tab-string-label{
+    font-family:var(--mono); font-size:10px; font-weight:700;
+    color:var(--parchment-dim); text-align:center; line-height:1;
   }
-  .beat-cell.chord-start .chord-fill{
-    border-top-left-radius:8px; border-bottom-left-radius:8px;
-  }
-  .beat-cell .chord-label{
-    position:relative; z-index:1; font-family:var(--display); font-weight:700; font-size:15px;
-    color:var(--parchment-dim); white-space:nowrap;
-  }
-  .beat-cell.chord-start .chord-label{ color:var(--parchment); }
-  .beat-cell.section-start{ border-left:2px solid var(--gold); }
-  .beat-cell.now .chord-fill{ background:rgba(217,142,142,0.22); }
-  .beat-cell.now.chord-start .chord-label{ color:var(--rose); }
 
-  .lyric-track{
-    display:flex; align-items:flex-start; height:54px; position:relative;
-    will-change:transform;
-    padding-top:8px;
+  .lyrics-wrap{
+    flex:1; overflow-y:auto; min-height:0;
+    border-top:1px solid var(--line);
+    -webkit-overflow-scrolling:touch;
   }
-  .lyric-block{
-    flex-shrink:0; padding:0 10px;
-    font-size:15px; line-height:1.4; color:var(--parchment-dim);
-    display:flex; align-items:flex-start;
-    transition:color 0.2s ease, opacity 0.2s ease;
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+
+  .lyrics-sheet{
+    padding:18px 20px 40px;
   }
-  .lyric-block.current{ color:var(--parchment); font-weight:600; }
-  .section-divider{
-    flex-shrink:0; width:1px; align-self:stretch;
+  .ls-section-tag{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--gold); opacity:0.85; margin:18px 0 10px;
   }
+  .ls-section-tag:first-child{ margin-top:0; }
+  .ls-line{
+    margin-bottom:18px; line-height:1.3;
+  }
+  .ls-segment{
+    display:inline-flex; flex-direction:column; align-items:flex-start;
+    vertical-align:bottom; position:relative;
+  }
+  .ls-chord{
+    font-family:var(--mono); font-weight:700; font-size:13px; color:var(--gold);
+    line-height:1.4; height:18px; white-space:nowrap;
+    transition:color 0.15s ease;
+  }
+  .ls-text{
+    font-size:17px; color:var(--parchment-dim); white-space:pre;
+    transition:color 0.15s ease, opacity 0.15s ease;
+  }
+  .ls-segment.current .ls-chord{ color:var(--rose); }
+  .ls-segment.current .ls-text{ color:var(--parchment); opacity:1; }
+  .ls-segment.past .ls-text{ opacity:0.45; }
+  .ls-segment.past .ls-chord{ opacity:0.45; }
 
   /* ---------- Transport controls ---------- */
   .transport{
-    flex-shrink:0; padding:14px 18px calc(20px + env(safe-area-inset-bottom));
+    flex-shrink:0; padding:12px 18px calc(18px + env(safe-area-inset-bottom));
     border-top:1px solid var(--line);
     background:var(--ink-2);
   }
-  .speed-row{
-    display:flex; align-items:center; gap:12px; margin-bottom:14px;
+
+  /* Speed buttons — tap-friendly, clearly showing current speed */
+  .speed-btns{
+    display:flex; align-items:center; gap:6px; margin-bottom:12px;
   }
-  .speed-row svg{ width:14px; height:14px; opacity:0.6; flex-shrink:0; }
-  .speed-track{
-    flex:1; position:relative; height:28px; display:flex; align-items:center;
+  .speed-btns-label{
+    font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.1em;
+    color:var(--parchment-dim); flex-shrink:0; margin-right:2px;
   }
-  .speed-track input[type=range]{
-    -webkit-appearance:none; width:100%; height:4px; border-radius:4px;
-    background:var(--line); outline:none; margin:0;
+  .speed-btn{
+    flex:1; padding:7px 0; border:1px solid var(--line); border-radius:8px;
+    background:var(--ink-3); color:var(--parchment-dim);
+    font-family:var(--mono); font-size:12px; font-weight:600;
+    cursor:pointer; transition:all 0.12s ease; text-align:center;
   }
-  .speed-track input[type=range]::-webkit-slider-thumb{
-    -webkit-appearance:none; width:22px; height:22px; border-radius:50%;
-    background:var(--rose);
-    border:3px solid var(--ink-2);
-    box-shadow:0 0 0 1px var(--rose);
-    cursor:pointer;
-    /* pick shape via clip-path for a little personality */
-  }
-  .speed-label{
-    font-family:var(--mono); font-size:11.5px; color:var(--parchment-dim); min-width:54px; text-align:right;
+  .speed-btn:active{ transform:scale(0.93); }
+  .speed-btn.active{
+    background:var(--rose); color:var(--ink);
+    border-color:var(--rose);
+    box-shadow:0 2px 8px rgba(217,142,142,0.35);
   }
 
   .main-controls{
@@ -449,25 +475,25 @@
   <header>
     <div class="brand">
       <div class="mark">
-        <!-- <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.2.5-1 2-2.2 4-2.2 3.5 0 5.5 3.5 3.5 7.5C19 16.65 12 21 12 21z" fill="#D98E8E"/></svg> -->
-        <!-- <span class="eyebrow">for you</span> -->
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.2.5-1 2-2.2 4-2.2 3.5 0 5.5 3.5 3.5 7.5C19 16.65 12 21 12 21z" fill="#D98E8E"/></svg>
+        <!-- <span class="eyebrow">voor jou</span> -->
       </div>
       <h1>Akkoordje voor Noortje</h1>
     </div>
-    <div class="header-note" id="headerNote">Kies een nummer, en speel mee!</div>
+    <div class="header-note" id="headerNote">kies een liedje, pak je gitaar</div>
   </header>
 
   <!--
   <div class="dedication" id="dedication">
     <button class="close-ded" id="closeDed">✕</button>
-    Made this so you'd always have something easy to play along to — <b>no ads, no premium wall, no nonsense.</b> Just the songs, and a little love stitched into the corners.
+    Dit gemaakt zodat je altijd iets makkelijks hebt om mee te spelen — <b>geen advertenties, geen premium-muur, geen onzin.</b> Gewoon de liedjes, en een beetje liefde in de hoekjes.
   </div>
   -->
 
   <div class="toolbar">
     <div class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      <input id="searchInput" type="text" placeholder="Search songs or artists…" />
+      <input id="searchInput" type="text" placeholder="Zoek liedjes of artiesten…" />
     </div>
   </div>
 
@@ -477,7 +503,7 @@
   <div class="fab">
     <button id="addSongBtn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
-      Add song
+      Liedje toevoegen
     </button>
   </div>
   -->
@@ -490,8 +516,8 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <div class="player-title-block">
-      <h2 id="playerTitle">Song title</h2>
-      <span id="playerArtist">Artist</span>
+      <h2 id="playerTitle">Titel van het liedje</h2>
+      <span id="playerArtist">Artiest</span>
     </div>
     <!-- heart-btn disabled for now — testing
     <button class="icon-btn" id="playerHeart">
@@ -505,7 +531,7 @@
 
   <div class="chord-panel" id="chordPanel">
     <div class="cp-strum">
-      <span class="cp-eyebrow">Strum pattern</span>
+      <span class="cp-eyebrow">Stijl van strummen</span>
       <span class="cp-strum-pattern" id="cpStrumPattern">D D U D U D</span>
     </div>
     <div class="cp-main">
@@ -514,42 +540,55 @@
         <span class="cp-chord-name" id="cpChordName">—</span>
       </div>
       <div class="cp-next">
-        <span class="cp-eyebrow">Next</span>
+        <span class="cp-eyebrow">Volgende</span>
         <div class="cp-diagram cp-diagram-next" id="cpNextDiagram"></div>
         <span class="cp-chord-name cp-chord-name-next" id="cpNextChordName">—</span>
       </div>
     </div>
   </div>
 
-  <div class="timeline-wrap">
-    <div class="timeline-fade-left"></div>
-    <div class="timeline-fade-right"></div>
-    <div class="timeline-playhead"></div>
-    <div class="timeline-scroll" id="timelineScroll">
-      <div class="timeline-track" id="timelineTrack"></div>
-      <div class="lyric-track" id="lyricTrack"></div>
+  <!-- Tutorial video panel: plain embed, only shown when song has a youtubeId -->
+  <div class="yt-tutorial-wrap" id="ytTutorialWrap" style="display:none;">
+    <div class="yt-tutorial-toggle" id="ytTutorialToggle">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 8l6 4-6 4V8z"/></svg>
+      <span id="ytTutorialLabel">Toon gitaarles</span>
+    </div>
+    <div class="yt-tutorial-holder" id="ytTutorialHolder"></div>
+  </div>
+
+  <!-- Horizontal tab timeline: shown for fingerpicking songs (displayMode: tab) -->
+  <div class="tab-timeline-wrap" id="tabTimelineWrap" style="display:none;">
+    <div class="tab-playhead"></div>
+    <div class="tab-fade-left"></div>
+    <div class="tab-fade-right"></div>
+    <div class="tab-scroll-area" id="tabScrollArea">
+      <div class="tab-track" id="tabTrack"></div>
     </div>
   </div>
 
+  <div class="lyrics-wrap" id="lyricsWrap">
+    <div class="lyrics-sheet" id="lyricsSheet"></div>
+  </div>
+
   <div class="transport">
-    <div class="speed-row">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h8l-1 8 11-12h-8l1-8z"/></svg>
-      <div class="speed-track">
-        <input type="range" id="speedSlider" min="0.3" max="2.2" step="0.05" value="1" />
-      </div>
-      <span class="speed-label" id="speedLabel">1.0×</span>
+    <div class="speed-btns" id="speedBtns">
+      <span class="speed-btns-label">Snelheid</span>
+      <button class="speed-btn" data-speed="0.25">¼×</button>
+      <button class="speed-btn" data-speed="0.5">½×</button>
+      <button class="speed-btn" data-speed="0.75">¾×</button>
+      <button class="speed-btn active" data-speed="1">1×</button>
+      <button class="speed-btn" data-speed="1.5">1½×</button>
+      <button class="speed-btn" data-speed="2">2×</button>
     </div>
 
     <div class="main-controls">
-      <button class="side-btn" id="restartBtn" title="Restart">
+      <button class="side-btn" id="restartBtn" title="Opnieuw beginnen">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
       </button>
       <button class="play-btn" id="playBtn">
         <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
       </button>
-      <button class="side-btn" id="tapTempoBtn" title="Tap tempo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-      </button>
+      <div class="side-btn" style="visibility:hidden;" aria-hidden="true"></div>
     </div>
 
     <div class="progress-bar" id="progressBar">
@@ -563,7 +602,7 @@
 <div class="sheet" id="addSheet">
   <div class="sheet-handle"></div>
   <div class="sheet-head">
-    <h3>Add a song</h3>
+    <h3>Liedje toevoegen</h3>
     <button class="icon-btn" id="closeSheet">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
@@ -571,39 +610,39 @@
   <div class="sheet-body">
     <div class="field-row">
       <div class="field">
-        <label>Title</label>
+        <label>Titel</label>
         <input id="inTitle" type="text" placeholder="Wonderwall" />
       </div>
       <div class="field">
-        <label>Artist</label>
+        <label>Artiest</label>
         <input id="inArtist" type="text" placeholder="Oasis" />
       </div>
     </div>
     <div class="field-row">
       <div class="field">
-        <label>Key / Capo</label>
+        <label>Toonsoort / Capo</label>
         <input id="inCapo" type="text" placeholder="Capo 2" />
       </div>
       <div class="field">
-        <label>Tempo (BPM)</label>
+        <label>Tempo (bpm)</label>
         <input id="inBpm" type="number" placeholder="90" />
       </div>
       <div class="field">
-        <label>Difficulty</label>
+        <label>Niveau</label>
         <select id="inDiff">
-          <option value="easy">Easy</option>
-          <option value="mid">Intermediate</option>
+          <option value="easy">Makkelijk</option>
+          <option value="mid">Gemiddeld</option>
         </select>
       </div>
     </div>
     <div class="field">
-      <label>Chords &amp; lines</label>
-      <textarea id="inBody" placeholder="[Verse] Em G D A Today is gonna be the day"></textarea>
+      <label>Akkoorden &amp; tekstregels</label>
+      <textarea id="inBody" placeholder="[Vers] Em G D A Today is gonna be the day"></textarea>
     </div>
     <div class="hint">
-      One line of chords, then the line it goes with. Start a section with a tag like <code>[Verse]</code> or <code>[Chorus]</code> on its own line. Blank lines are fine.
+      Eén regel met akkoorden, dan de tekstregel die erbij hoort. Begin een onderdeel met een label zoals <code>[Vers]</code> of <code>[Refrein]</code> op zijn eigen regel. Lege regels mogen.
     </div>
-    <button class="save-btn" id="saveSongBtn" disabled>Save to songbook</button>
+    <button class="save-btn" id="saveSongBtn" disabled>Opslaan in liedjesboek</button>
   </div>
 </div>
 ================= END DISABLED BLOCK ================= -->
@@ -822,7 +861,7 @@
     if(filtered.length === 0){
       listEl.innerHTML = `<div class="empty">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-        <div>No songs match that search.</div>
+        <div>Geen liedjes gevonden voor die zoekopdracht.</div>
       </div>`;
       return;
     }
@@ -845,7 +884,7 @@
             <span>${escapeHtml(s.capo)}</span>
           </div>
         </div>
-        <span class="diff-pill ${s.difficulty==='easy'?'diff-easy':'diff-mid'}">${s.difficulty==='easy'?'Easy':'Intermediate'}</span>
+        <span class="diff-pill ${s.difficulty==='easy'?'diff-easy':'diff-mid'}">${s.difficulty==='easy'?'Makkelijk':'Gemiddeld'}</span>
         <!-- heart-btn disabled for now — testing
         <button class="heart-btn ${isFav(s.id)?'active':''}" data-id="${s.id}">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 5 6 5c2 0 3.5 1.2 4 2.2.5-1 2-2.2 4-2.2 3.5 0 5.5 3.5 3.5 7.5C19 16.65 12 21 12 21z"/></svg>
@@ -870,13 +909,13 @@
     if(favs.length){
       const label = document.createElement("div");
       label.className = "section-label";
-      label.textContent = "Favorites";
+      label.textContent = "Favorieten";
       listEl.appendChild(label);
       favs.forEach(s=>listEl.appendChild(card(s)));
     }
     const label2 = document.createElement("div");
     label2.className = "section-label";
-    label2.textContent = favs.length ? "All songs" : "Your songbook";
+    label2.textContent = favs.length ? "Alle liedjes" : "Jouw liedjesboek";
     listEl.appendChild(label2);
     rest.forEach(s=>listEl.appendChild(card(s)));
   }
@@ -900,15 +939,15 @@
   });
 
   const NOTES = [
-    "pick a song, pick up the guitar",
-    "made with you in mind",
-    "no ads. no premium wall. just us.",
-    "play it badly a few times — that's how it's done"
+    "kies een liedje, pak je gitaar",
+    "met jou in gedachten gemaakt",
+    "geen advertenties. geen premium-muur. gewoon wij.",
+    "speel het een paar keer slecht — zo leer je het"
   ];
   headerNote.textContent = NOTES[Math.floor(Math.random()*NOTES.length)];
   ===================== END DISABLED BLOCK ===================== */
   const headerNote = document.getElementById("headerNote");
-  headerNote.textContent = "Kies een nummer, en speel mee!";
+  headerNote.textContent = "kies een liedje, pak je gitaar";
 
 
   /* ===================== PLAYER ===================== */
@@ -918,8 +957,6 @@
   const infoStrip = document.getElementById("infoStrip");
   const playBtn = document.getElementById("playBtn");
   const playIcon = document.getElementById("playIcon");
-  const speedSlider = document.getElementById("speedSlider");
-  const speedLabel = document.getElementById("speedLabel");
   const progressFill = document.getElementById("progressFill");
   const progressBar = document.getElementById("progressBar");
   const playerHeart = document.getElementById("playerHeart");
@@ -928,16 +965,36 @@
   const cpStrumPattern = document.getElementById("cpStrumPattern");
   const cpNextChordName = document.getElementById("cpNextChordName");
   const cpNextDiagram = document.getElementById("cpNextDiagram");
-  const timelineTrack = document.getElementById("timelineTrack");
-  const lyricTrack = document.getElementById("lyricTrack");
-  const tapTempoBtn = document.getElementById("tapTempoBtn");
+  const lyricsSheet = document.getElementById("lyricsSheet");
+  const lyricsWrap = document.getElementById("lyricsWrap");
+  const tabTimelineWrap = document.getElementById("tabTimelineWrap");
+  const tabTrack = document.getElementById("tabTrack");
+  const tabScrollArea = document.getElementById("tabScrollArea");
 
-  const BEAT_PX = 46;          // must match .beat-cell width in CSS
-  const BAR_LENGTH_BEATS = 4;  // purely visual: draws a bar line every 4 beats
+  /* Tab timeline constants */
+  const TAB_STRINGS = ["e","B","G","D","A","E"]; // index 0=hoog, 5=laag
+  const TAB_STRING_COUNT = 6;
+  const TAB_HEIGHT = 148;
+  const TAB_PAD_TOP = 16;
+  const TAB_PAD_BOT = 16;
+  const TAB_STRING_AREA = TAB_HEIGHT - TAB_PAD_TOP - TAB_PAD_BOT;
+  const TAB_STRING_GAP = TAB_STRING_AREA / (TAB_STRING_COUNT - 1);
+  const NOTE_R = 11; // nootcirkel radius
+  const LABEL_W = 28; // breedte van snaar-labels links
+
+  /* Speed buttons: current multiplier, applied to the BPM clock. */
+  let currentSpeed = 1;
+  document.getElementById("speedBtns").addEventListener("click", (e)=>{
+    const btn = e.target.closest(".speed-btn");
+    if(!btn) return;
+    currentSpeed = parseFloat(btn.dataset.speed);
+    document.querySelectorAll(".speed-btn").forEach(b => b.classList.toggle("active", b === btn));
+  });
 
   let currentSong = null;
-  let beatTimeline = [];   // [{chord, sectionTag, strum, isChordStart, isSectionStart}, ...] one per beat
-  let lyricBlocks = [];    // [{text, startBeat, beatSpan}, ...]
+  let beatTimeline = [];     // [{chord, sectionTag, strum, isChordStart, isSectionStart}, ...] one per beat
+  let lyricSegments = [];    // [{sectionTag, isSectionStart, segments:[{chord, text, startBeat, beatSpan}]}, ...] one entry per line
+  let flatSegments = [];     // same segments flattened, in order, for fast lookup during playback
   let totalBeats = 0;
   let isPlaying = false;
   let scrollAnim = null;
@@ -955,16 +1012,52 @@
     infoStrip.innerHTML = `
       <div class="info-chip">${escapeHtml(song.capo)}</div>
       <div class="info-chip"><b>${song.bpm}</b> bpm</div>
-      <div class="info-chip">${song.difficulty==='easy'?'Easy':'Intermediate'}</div>
+      <div class="info-chip">${song.difficulty==='easy'?'Makkelijk':'Gemiddeld'}</div>
     `;
-
+    setupTutorialVideo(song);
     buildTimeline(song);
     player.classList.add("open");
     resetTransport();
   }
 
-  /* Expands a song's sections/lines/chords into a flat per-beat timeline,
-     plus a parallel list of lyric blocks positioned by beat offset.
+  /* Splits a line's lyric text into one segment per chord change within
+     that line. If a chord slot carries an explicit wordIndex (the position,
+     in words, where that chord should sit — set by hand when transcribing
+     from a photo of a real chord sheet), the split happens exactly there.
+     Otherwise the line's words are divided evenly across the chord changes,
+     which is an approximation, not a transcription. */
+  function splitLyricIntoSegments(lyric, chordEvents){
+    const words = (lyric || "").split(/\s+/).filter(Boolean);
+    if(chordEvents.length === 0 || words.length === 0){
+      return [{ chord: null, text: lyric || "", startBeat: 0, beatSpan: 0 }];
+    }
+
+    const hasExplicitIndices = chordEvents.every(ev => typeof ev.wordIndex === "number");
+    let boundaries;
+    if(hasExplicitIndices){
+      boundaries = chordEvents.map(ev => Math.max(0, Math.min(words.length, ev.wordIndex)));
+    } else {
+      boundaries = chordEvents.map((ev, i) => Math.round(i * words.length / chordEvents.length));
+    }
+
+    const segments = [];
+    for(let i=0; i<chordEvents.length; i++){
+      const startWord = boundaries[i];
+      const endWord = (i+1 < boundaries.length) ? boundaries[i+1] : words.length;
+      const text = words.slice(startWord, Math.max(startWord, endWord)).join(" ");
+      segments.push({
+        chord: chordEvents[i].chord,
+        text: text,
+        startBeat: chordEvents[i].startBeat,
+        beatSpan: chordEvents[i].beatSpan
+      });
+    }
+    return segments;
+  }
+
+  /* Expands a song's sections/lines/chords into a flat per-beat timeline
+     (used for the beat clock, chord diagram, and BPM pulse), plus a
+     per-line list of text segments for the Chordify-style lyric sheet.
 
      Each entry in a line's chords array is exactly ONE beat:
        - a chord name ("G", "D/F#", ...) strikes that chord on this beat
@@ -974,27 +1067,35 @@
      for that beat, since there's nothing earlier in the line to hold. */
   function buildTimeline(song){
     beatTimeline = [];
-    lyricBlocks = [];
+    lyricSegments = [];
+    flatSegments = [];
+
+    if(song.displayMode === "tab" && song.tabSections){
+      buildTabTimeline(song);
+      return;
+    }
+
+    // --- Chord mode (default) ---
     let beatCursor = 0;
 
     song.sections.forEach(sec=>{
       const strum = sec.strum || "D D D D";
       let isFirstBeatOfSection = true;
-      let heldChord = null; // carries across blank slots within a line
-      sec.lines.forEach(ln=>{
+      sec.lines.forEach((ln, lineIdx)=>{
         const slots = (ln.chords && ln.chords.length) ? ln.chords : ["-"];
-        const lineStartBeat = beatCursor;
-        heldChord = null; // each line starts fresh; blanks at the very start of a line are silence, not a leak from the previous line
+        let heldChord = null;
+        const chordEvents = [];
+        const lineWasFirstInSection = isFirstBeatOfSection;
+
         slots.forEach(slot=>{
           const trimmed = (slot || "").trim();
           let chordName, isStart;
-          if(trimmed === "" ){
-            // hold: same chord as previous beat in this line (or silence if none yet)
+          if(trimmed === ""){
             chordName = heldChord;
             isStart = false;
           } else if(trimmed === "-"){
             chordName = null;
-            isStart = true; // a fresh silence still counts as its own "event" visually
+            isStart = true;
             heldChord = null;
           } else {
             chordName = trimmed;
@@ -1008,45 +1109,174 @@
             isChordStart: isStart,
             isSectionStart: isFirstBeatOfSection
           });
+          if(isStart){
+            chordEvents.push({ chord: chordName, startBeat: beatCursor, beatSpan: 1, wordIndex: (typeof slot === "object" ? slot.wordIndex : undefined) });
+          } else if(chordEvents.length){
+            chordEvents[chordEvents.length-1].beatSpan += 1;
+          }
           isFirstBeatOfSection = false;
           beatCursor += 1;
         });
-        const lineSpanBeats = beatCursor - lineStartBeat;
-        lyricBlocks.push({
-          text: ln.lyric || "",
-          startBeat: lineStartBeat,
-          beatSpan: lineSpanBeats
-        });
+
+        const segs = splitLyricIntoSegments(ln.lyric, chordEvents);
+        lyricSegments.push({ sectionTag: sec.tag, isSectionStart: lineWasFirstInSection, segments: segs });
+        segs.forEach(s => flatSegments.push(s));
       });
     });
 
     totalBeats = beatCursor;
-    renderTimelineDOM();
+    tabTimelineWrap.style.display = "none";
+    lyricsWrap.style.borderTop = "";
+    renderLyricsSheet();
   }
 
-  function renderTimelineDOM(){
-    // chord cells
-    let html = "";
-    beatTimeline.forEach((b, i)=>{
-      const isStart = b.isChordStart;
-      const classes = ["beat-cell"];
-      if(i % BAR_LENGTH_BEATS === 0) classes.push("beat-1");
-      if(isStart) classes.push("chord-start");
-      if(b.isSectionStart) classes.push("section-start");
-      html += `<div class="${classes.join(' ')}">
-        <div class="chord-fill"></div>
-        ${isStart ? `<span class="chord-label">${escapeHtml(b.chord || "—")}</span>` : ""}
-      </div>`;
-    });
-    timelineTrack.innerHTML = html;
+  /* =========== TAB MODE =========== */
+  let tabTotalPx = 0; // total pixel width of the full tab track
 
-    // lyric blocks, each positioned by width proportional to its beat span
-    let lyricHtml = "";
-    lyricBlocks.forEach(block=>{
-      const widthPx = block.beatSpan * BEAT_PX;
-      lyricHtml += `<div class="lyric-block" data-start="${block.startBeat}" data-span="${block.beatSpan}" style="width:${widthPx}px">${escapeHtml(block.text)}</div>`;
+  function buildTabTimeline(song){
+    tabTimelineWrap.style.display = "block";
+    lyricsWrap.style.borderTop = "none";
+
+    const secs = song.tabSections;
+    // Build a flat list of blocks for playback position tracking
+    beatTimeline = [];
+    let pxCursor = 0;
+    secs.forEach(sec=>{
+      sec.blocks.forEach(block=>{
+        // Each block maps to a beat-entry for the chord panel & lyric tracking
+        beatTimeline.push({
+          chord: block.label || sec.strum,
+          sectionTag: sec.tag,
+          strum: sec.strum,
+          isChordStart: true,
+          isSectionStart: false,
+          pxStart: pxCursor,
+          pxWidth: block.w
+        });
+        pxCursor += block.w;
+      });
     });
-    lyricTrack.innerHTML = lyricHtml;
+    tabTotalPx = pxCursor;
+    // For msPerBeat() compatibility: derive a pseudo beat-count
+    totalBeats = tabTotalPx / 80; // BEAT_PX = 80
+
+    renderTabTrack(secs);
+    renderTabLyrics(secs);
+  }
+
+  function renderTabTrack(secs){
+    // Build a single wide SVG with 6 string lines and note circles
+    const totalWidth = secs.reduce((acc,sec) =>
+      acc + sec.blocks.reduce((a,b) => a + b.w, 0), 0);
+    const svgH = TAB_HEIGHT;
+    const svgW = totalWidth;
+
+    let svg = `<svg width="${svgW}" height="${svgH}" viewBox="0 0 ${svgW} ${svgH}"
+      xmlns="http://www.w3.org/2000/svg" style="display:block;">`;
+
+    // String lines (6 horizontal lines)
+    for(let si=0; si<TAB_STRING_COUNT; si++){
+      const y = TAB_PAD_TOP + si * TAB_STRING_GAP;
+      svg += `<line x1="0" y1="${y}" x2="${svgW}" y2="${y}"
+        stroke="var(--line)" stroke-width="${si===5?1.8:1.2}" opacity="0.9"/>`;
+      // String label (leftmost position — we'll clip it with the fixed label panel)
+    }
+
+    // Section dividers + note blocks
+    let xCursor = 0;
+    secs.forEach(sec=>{
+      sec.blocks.forEach((block, bi)=>{
+        const bx = xCursor;
+
+        // Block divider line
+        svg += `<line x1="${bx}" y1="${TAB_PAD_TOP}" x2="${bx}" y2="${TAB_HEIGHT - TAB_PAD_BOT}"
+          stroke="var(--line)" stroke-width="1" opacity="0.5"/>`;
+
+        // Block label (akkoordnaam of sectietag) boven de bovenste snaar
+        const lbl = block.label || "";
+        if(lbl){
+          svg += `<text x="${bx + 6}" y="${TAB_PAD_TOP - 4}"
+            font-family="var(--mono)" font-size="11" font-weight="700"
+            fill="var(--gold)">${escapeHtml(lbl)}</text>`;
+        }
+
+        // Notes
+        block.notes.forEach(note=>{
+          const nx = bx + note.x;
+          const ny = TAB_PAD_TOP + note.s * TAB_STRING_GAP;
+          const isOpen = note.f === 0;
+          const fillColor = isOpen ? "none" : "var(--rose)";
+          const strokeColor = isOpen ? "var(--parchment-dim)" : "var(--rose)";
+          const textColor = isOpen ? "var(--parchment-dim)" : "var(--ink)";
+          svg += `<circle cx="${nx}" cy="${ny}" r="${NOTE_R}"
+            fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>`;
+          svg += `<text x="${nx}" y="${ny + 4}"
+            font-family="var(--mono)" font-size="10" font-weight="700"
+            fill="${textColor}" text-anchor="middle">${note.f}</text>`;
+          // Techniek-label
+          if(note.t){
+            svg += `<text x="${nx + NOTE_R + 3}" y="${ny - NOTE_R + 2}"
+              font-family="var(--mono)" font-size="8" fill="var(--parchment-dim)">${note.t}</text>`;
+          }
+        });
+
+        xCursor += block.w;
+      });
+    });
+
+    svg += `</svg>`;
+
+    // String labels fixed panel
+    let labelsHtml = `<div class="tab-string-labels">`;
+    TAB_STRINGS.forEach(s=>{
+      labelsHtml += `<div class="tab-string-label">${s}</div>`;
+    });
+    labelsHtml += `</div>`;
+
+    tabTrack.innerHTML = svg;
+    tabTrack.style.width = svgW + "px";
+    tabScrollArea.innerHTML = labelsHtml;
+    tabScrollArea.appendChild(tabTrack);
+  }
+
+  function renderTabLyrics(secs){
+    // Plain text lyrics for tab songs — shown under the timeline
+    let html = "";
+    secs.forEach(sec=>{
+      html += `<div class="ls-section-tag">${escapeHtml(sec.tag)}</div>`;
+      if(sec.lyric){
+        const lines = sec.lyric.split(" / ");
+        lines.forEach(line=>{
+          html += `<div class="ls-line"><span class="ls-segment">
+            <span class="ls-chord"></span>
+            <span class="ls-text">${escapeHtml(line)}</span>
+          </span></div>`;
+        });
+      }
+    });
+    lyricsSheet.innerHTML = html;
+  }
+
+  /* =========== END TAB MODE =========== */
+
+  function renderLyricsSheet(){
+    let html = "";
+    let lastTag = null;
+    lyricSegments.forEach(line=>{
+      if(line.isSectionStart && line.sectionTag !== lastTag){
+        html += `<div class="ls-section-tag">${escapeHtml(line.sectionTag)}</div>`;
+        lastTag = line.sectionTag;
+      }
+      html += `<div class="ls-line">`;
+      line.segments.forEach(seg=>{
+        html += `<span class="ls-segment" data-start="${seg.startBeat}" data-span="${seg.beatSpan}">
+          <span class="ls-chord">${seg.chord ? escapeHtml(seg.chord) : "\u00A0"}</span>
+          <span class="ls-text">${escapeHtml(seg.text)}</span>
+        </span> `;
+      });
+      html += `</div>`;
+    });
+    lyricsSheet.innerHTML = html;
   }
 
   function resetTransport(){
@@ -1055,6 +1285,17 @@
     progressFill.style.width = "0%";
     lastShownChord = undefined;
     lastShownNextChord = undefined;
+    lastHighlightedSegEl = null;
+    lastBeatIdxForPulse = -1;
+    currentSpeed = 1;
+    document.querySelectorAll(".speed-btn").forEach(b =>
+      b.classList.toggle("active", parseFloat(b.dataset.speed) === 1)
+    );
+    document.querySelectorAll(".ls-segment.current, .ls-segment.past").forEach(el=>{
+      el.classList.remove("current","past");
+    });
+    if(lyricsWrap) lyricsWrap.scrollTop = 0;
+    if(tabTrack) tabTrack.style.transform = "translateX(0)";
     updatePlaybackVisuals(0);
   }
 
@@ -1088,7 +1329,7 @@
     if(lastTs == null) lastTs = ts;
     const dt = ts - lastTs;
     lastTs = ts;
-    const speed = parseFloat(speedSlider.value);
+    const speed = currentSpeed;
     elapsedMs += dt * speed;
 
     const durationMs = totalBeats * msPerBeat();
@@ -1105,36 +1346,45 @@
   }
 
   let lastShownChord = undefined;
-  const timelineWrapEl = document.querySelector(".timeline-wrap");
-  function getViewportCenterPx(){
-    return timelineWrapEl ? timelineWrapEl.clientWidth / 2 : 160;
-  }
+  let lastHighlightedSegEl = null;
+  let lastBeatIdxForPulse = -1;
 
-  /* Translates the chord timeline and lyric track left by the elapsed beats,
-     so the playhead (fixed at horizontal center) always sits over the
-     beat-cell that's currently playing. Also updates the chord panel
-     and strum-pattern label to match. */
+  /* Highlights the lyric segment currently playing, updates the chord panel,
+     and — in tab mode — scrolls the tab track so the playhead stays centred. */
   function updatePlaybackVisuals(ms){
     const elapsedBeats = ms / msPerBeat();
-    const offsetPx = getViewportCenterPx() - elapsedBeats * BEAT_PX;
-    timelineTrack.style.transform = `translateX(${offsetPx}px)`;
-    lyricTrack.style.transform = `translateX(${offsetPx}px)`;
-
-    // tiny epsilon guards against floating-point drift landing just under
-    // an exact beat boundary (e.g. 23.999999996 instead of 24)
     const beatIdx = Math.max(0, Math.min(beatTimeline.length - 1, Math.floor(elapsedBeats + 1e-6)));
     const beat = beatTimeline[beatIdx];
     if(!beat) return;
 
-    // highlight current chord cell + current lyric block
-    timelineTrack.querySelectorAll(".beat-cell.now").forEach(el=>el.classList.remove("now"));
-    const cellEl = timelineTrack.children[beatIdx];
-    if(cellEl) cellEl.classList.add("now");
+    if(beatIdx !== lastBeatIdxForPulse){
+      lastBeatIdxForPulse = beatIdx;
+      pulseBpmDot();
+    }
 
-    lyricTrack.querySelectorAll(".lyric-block.current").forEach(el=>el.classList.remove("current"));
-    const lyricBlockIdx = lyricBlocks.findIndex(b => beatIdx >= b.startBeat && beatIdx < b.startBeat + b.beatSpan);
-    if(lyricBlockIdx >= 0 && lyricTrack.children[lyricBlockIdx]){
-      lyricTrack.children[lyricBlockIdx].classList.add("current");
+    // Tab mode: translate the tab track left so the playhead sits over the current pixel
+    if(currentSong && currentSong.displayMode === "tab"){
+      const elapsedPx = elapsedBeats * 80; // BEAT_PX = 80
+      const centerPx = tabScrollArea.clientWidth / 2;
+      const offsetPx = centerPx - elapsedPx - LABEL_W;
+      tabTrack.style.transform = `translateX(${offsetPx}px)`;
+    }
+
+    // Lyric highlight (both modes)
+    const segIdx = flatSegments.findIndex(s => beatIdx >= s.startBeat && beatIdx < s.startBeat + s.beatSpan);
+    const segEl = (segIdx >= 0) ? lyricsSheet.querySelectorAll(".ls-segment")[segIdx] : null;
+    if(segEl !== lastHighlightedSegEl){
+      if(lastHighlightedSegEl) lastHighlightedSegEl.classList.remove("current");
+      document.querySelectorAll(".ls-segment.past").forEach(el => el.classList.remove("past"));
+      if(segEl){
+        segEl.classList.add("current");
+        const allSegs = lyricsSheet.querySelectorAll(".ls-segment");
+        for(let i=0; i<segIdx; i++) allSegs[i].classList.add("past");
+        if(isPlaying){
+          segEl.scrollIntoView({ block: "center", behavior: "smooth" });
+        }
+      }
+      lastHighlightedSegEl = segEl;
     }
 
     if(beat.chord !== lastShownChord){
@@ -1171,42 +1421,41 @@
     return i < beatTimeline.length ? beatTimeline[i].chord : null;
   }
 
-  /* ---------- Tap tempo: lets the person nudge the BPM by tapping along,
-     since beats-per-chord is an approximation, not transcribed timing. ---------- */
-  let tapTimestamps = [];
-  tapTempoBtn.addEventListener("click", ()=>{
-    const now = performance.now();
-    tapTimestamps.push(now);
-    tapTimestamps = tapTimestamps.filter(t => now - t < 4000); // keep last 4s of taps
-    if(tapTimestamps.length >= 3){
-      const intervals = [];
-      for(let i=1;i<tapTimestamps.length;i++) intervals.push(tapTimestamps[i]-tapTimestamps[i-1]);
-      const avgMs = intervals.reduce((a,b)=>a+b,0) / intervals.length;
-      const newBpm = Math.round(60000 / avgMs);
-      if(currentSong && newBpm >= 40 && newBpm <= 220){
-        currentSong.bpm = newBpm;
-        if(currentSong.id.startsWith("user-")){
-          const stored = store.userSongs.find(s=>s.id===currentSong.id);
-          if(stored){ stored.bpm = newBpm; saveStore(store); }
+  /* Small visual metronome — no longer has a DOM element but the beat-index
+     tracking in updatePlaybackVisuals still uses lastBeatIdxForPulse. */
+  function pulseBpmDot(){ /* no-op: bpm-bar removed */ }
+
+  /* Tutorial video panel: a plain non-synced YouTube embed for guitar lessons.
+     Only visible when the song has a youtubeId field. The iframe is only
+     inserted when the panel is opened (lazy), so it doesn't load until needed. */
+  const ytTutorialWrap   = document.getElementById("ytTutorialWrap");
+  const ytTutorialToggle = document.getElementById("ytTutorialToggle");
+  const ytTutorialLabel  = document.getElementById("ytTutorialLabel");
+  const ytTutorialHolder = document.getElementById("ytTutorialHolder");
+
+  function setupTutorialVideo(song){
+    if(song.youtubeId){
+      ytTutorialWrap.style.display = "block";
+      ytTutorialHolder.classList.remove("open");
+      ytTutorialHolder.innerHTML = "";
+      ytTutorialLabel.textContent = "Toon gitaarles";
+      ytTutorialToggle.onclick = ()=>{
+        const isOpen = ytTutorialHolder.classList.contains("open");
+        if(!isOpen && !ytTutorialHolder.querySelector("iframe")){
+          ytTutorialHolder.innerHTML = `<iframe src="https://www.youtube.com/embed/${encodeURIComponent(song.youtubeId)}?rel=0" title="Gitaarles: ${escapeHtml(song.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
         }
-        infoStrip.innerHTML = `
-          <div class="info-chip">${escapeHtml(currentSong.capo)}</div>
-          <div class="info-chip"><b>${currentSong.bpm}</b> bpm</div>
-          <div class="info-chip">${currentSong.difficulty==='easy'?'Easy':'Intermediate'}</div>
-        `;
-        showToast(`Tempo set to ${newBpm} bpm`);
-      }
+        ytTutorialHolder.classList.toggle("open", !isOpen);
+        ytTutorialLabel.textContent = isOpen ? "Toon gitaarles" : "Verberg gitaarles";
+      };
+    } else {
+      ytTutorialWrap.style.display = "none";
     }
-  });
+  }
 
   playBtn.addEventListener("click", ()=>{
     if(isPlaying) pause(); else play();
   });
   document.getElementById("restartBtn").addEventListener("click", resetTransport);
-
-  speedSlider.addEventListener("input", ()=>{
-    speedLabel.textContent = parseFloat(speedSlider.value).toFixed(2).replace(/0$/,'') + "×";
-  });
 
   progressBar.addEventListener("click", (e)=>{
     if(!totalBeats) return;
@@ -1265,14 +1514,14 @@
   saveSongBtn.addEventListener("click", ()=>{
     const sections = parseSongBody(inBody.value);
     if(!sections.length){
-      showToast("Couldn't read any lines — check the format and try again");
+      showToast("Kon geen regels lezen — controleer de opmaak en probeer opnieuw");
       return;
     }
     const id = "user-" + Date.now();
     const color = PALETTE[store.userSongs.length % PALETTE.length];
     const song = {
       id, title: inTitle.value.trim(), artist: inArtist.value.trim(),
-      capo: inCapo.value.trim() || "No capo",
+      capo: inCapo.value.trim() || "Geen capo",
       bpm: parseInt(inBpm.value) || 90,
       difficulty: inDiff.value,
       color, favorite:false,
@@ -1286,7 +1535,7 @@
     [inTitle,inArtist,inCapo,inBpm,inBody].forEach(el=>el.value="");
     inDiff.value = "easy";
     validateForm();
-    showToast("Added to the songbook 🤍");
+    showToast("Toegevoegd aan het liedjesboek 🤍");
   });
   ===================== END DISABLED BLOCK ===================== */
 
@@ -1308,11 +1557,11 @@
   function showLoadError(){
     listEl.innerHTML = `<div class="empty">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
-      <div>Couldn't load the songbook.</div>
+      <div>Het liedjesboek kon niet geladen worden.</div>
       <div style="font-size:12px; margin-top:6px; opacity:0.8; line-height:1.5;">
-        This usually means the page was opened as a local file instead of through its hosted link —
-        songs.json and chords.json can only be read over http(s). If this keeps happening once it's
-        hosted, check that both files sit next to index.html.
+        Dit gebeurt meestal wanneer de pagina als los bestand is geopend in plaats van via de gehoste link —
+        songs.json en chords.json kunnen alleen via http(s) gelezen worden. Als dit blijft gebeuren zodra de
+        pagina gehost is, controleer dan of beide bestanden naast index.html staan.
       </div>
     </div>`;
   }
